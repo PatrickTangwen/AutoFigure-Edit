@@ -556,11 +556,15 @@ AutoFigure-edit/
 ## 🤝 Community & Support
 
 **WeChat Discussion Group**  
-Scan the QR code to join our community. If the code is expired, please add WeChat ID `nauhcutnil` or contact `tuchuan@mail.hfut.edu.cn`.
+Scan the QR code to join our community. If the QR code has expired, please add WeChat ID `nauhcutnil` or contact `tuchuan@mail.hfut.edu.cn`.
+
+**When sending a friend request, please identify yourself in the format:**  
+`University/Company - Degree/Position - Name`  
+(e.g., `Westlake University - PhD Student - Zhang San`).
 
 <table>
   <tr>
-    <td><img src="img/wechat11.jpg" width="200" alt="WeChat 2"/></td>
+    <td><img src="img/wechat11.jpg" width="200" alt="WeChat 1"/></td>
     <td><img src="img/lzwechat.jpg" width="200" alt="WeChat 2"/></td>
   </tr>
 </table>
