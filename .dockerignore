@@ -1,6 +1,15 @@
 .git
 .gitignore
 .env
+roboflow_invite_link.txt
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_rsa.pub
+credentials.json
+secrets/
 __pycache__/
 *.pyc
 *.pyo

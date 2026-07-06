@@ -1,6 +1,6 @@
 (() => {
-  const INPUT_STATE_KEY = "autofigure_input_state_v2";
-  const IMPORT_STATE_KEY = "autofigure_import_state_v1";
+  const INPUT_STATE_KEY = "autofigure_input_state_v5";
+  const IMPORT_STATE_KEY = "autofigure_import_state_v4";
   const LOCALE_KEY = "autofigure_locale_v1";
   const BIANXIE_BASE_URL = "https://api.bianxie.ai/v1";
   const DEFAULT_CUSTOM_BASE_URL = "";
@@ -61,7 +61,7 @@
         image_provider_caption: "You can keep it linked to the SVG path or override it.",
         image_model_label: "Image Model",
         image_model_caption: "Editable model id for the step 1 image route.",
-        image_model_hint: "Default is `gpt-image-2`. You can replace it with any compatible image model id.",
+        image_model_hint: "Default is `gemini-3.1-flash-image`. You can replace it with any compatible image model id.",
         api_key_label: "Primary API Key",
         api_key_hint: "Used by the selected SVG / reasoning provider. Reused for images when possible.",
         bianxie_register_hint: 'Register at <a href="https://bianxieai.com/autofigure" target="_blank" rel="noopener noreferrer">bianxieai</a>.',
@@ -231,7 +231,7 @@
           "Used only when the route is Custom. Fill the OpenAI-compatible base URL provided by your relay or gateway.",
         field_image_model_title: "Image Model",
         field_image_model_copy:
-          "Default is gpt-image-2 for OpenAI Images. You can manually replace it with any compatible image model id if needed.",
+          "Default is gemini-3.1-flash-image for the recommended Gemini route. You can manually replace it with any compatible image model id if needed.",
         field_svg_model_title: "SVG Model",
         field_svg_model_copy:
           "Default follows the selected reasoning route. The default for OpenAI Responses is gpt-5.5, while Gemini/OpenRouter/Custom use the Gemini defaults unless you know you need a different id.",
@@ -374,7 +374,7 @@
         image_provider_caption: "可以跟随 SVG 路径，也可以单独覆盖。",
         image_model_label: "图片模型",
         image_model_caption: "步骤 1 生图路线对应的可编辑模型 id。",
-        image_model_hint: "默认是 `gpt-image-2`。你也可以替换为任何兼容的图片模型 id。",
+        image_model_hint: "默认是 `gemini-3.1-flash-image`。你也可以替换为任何兼容的图片模型 id。",
         api_key_label: "主 API Key",
         api_key_hint: "用于当前 SVG / 推理 provider；在可复用时也会用于图片路线。",
         bianxie_register_hint: '注册链接：<a href="https://bianxieai.com/autofigure" target="_blank" rel="noopener noreferrer">bianxieai</a>。',
@@ -543,7 +543,7 @@
           "只有在路线选择为 Custom 时才需要填写。这里填你的中转、网关或兼容 OpenAI 的 base URL。",
         field_image_model_title: "图片模型",
         field_image_model_copy:
-          "OpenAI Images 默认推荐 gpt-image-2。如果你知道自己要换别的图片模型，也可以直接手填模型 id。",
+          "推荐 Gemini 路线默认使用 gemini-3.1-flash-image。如果你知道自己要换别的图片模型，也可以直接手填模型 id。",
         field_svg_model_title: "SVG 模型",
         field_svg_model_copy:
           "默认会跟随当前推理路线。OpenAI Responses 默认是 gpt-5.5；Gemini/OpenRouter/Custom 默认沿用 Gemini 系列模型，除非你明确知道要改。",
@@ -842,7 +842,7 @@
     function saveInputState() {
       const state = {
         methodText: $("methodText")?.value ?? "",
-        provider: normalizeProviderValue(providerInput?.value ?? "bianxie"),
+        provider: normalizeProviderValue(providerInput?.value ?? "gemini"),
         imageProvider: normalizeImageProviderValue(imageProviderInput?.value ?? "same"),
         imageModel: imageModelInput?.value ?? "",
         svgModel: svgModelInput?.value ?? "",
@@ -964,7 +964,7 @@
     }
 
     function getEffectiveImageProvider() {
-      const provider = normalizeProviderValue(providerInput?.value ?? "bianxie");
+      const provider = normalizeProviderValue(providerInput?.value ?? "gemini");
       const override = normalizeImageProviderValue(imageProviderInput?.value ?? "same");
       if (override !== "same") {
         return override;
@@ -990,9 +990,9 @@
         return "gpt-image-2";
       }
       if (provider === "openrouter") {
-        return "google/gemini-3.1-flash-image-preview";
+        return "google/gemini-3.1-flash-image";
       }
-      return "gemini-3.1-flash-image-preview";
+      return "gemini-3.1-flash-image";
     }
 
     function getResolvedPrimaryBaseUrl() {
@@ -1008,7 +1008,7 @@
     }
 
     function syncModelDefaults() {
-      const provider = normalizeProviderValue(providerInput?.value ?? "bianxie");
+      const provider = normalizeProviderValue(providerInput?.value ?? "gemini");
       const effectiveImageProvider = getEffectiveImageProvider();
 
       if (svgModelInput) {
@@ -1035,7 +1035,7 @@
     }
 
     function updateRouteSummary() {
-      const provider = normalizeProviderValue(providerInput?.value ?? "bianxie");
+      const provider = normalizeProviderValue(providerInput?.value ?? "gemini");
       const effectiveImageProvider = getEffectiveImageProvider();
       const imageProviderSource = normalizeImageProviderValue(imageProviderInput?.value ?? "same");
       const selectedImageModel = imageModelInput?.value.trim() || getDefaultImageModel(effectiveImageProvider);
@@ -1081,7 +1081,7 @@
     }
 
     function syncRoutingControls() {
-      const provider = normalizeProviderValue(providerInput?.value ?? "bianxie");
+      const provider = normalizeProviderValue(providerInput?.value ?? "gemini");
       const imageProviderSource = normalizeImageProviderValue(imageProviderInput?.value ?? "same");
       const effectiveImageProvider = getEffectiveImageProvider();
 
@@ -1318,7 +1318,7 @@
         return;
       }
 
-      const provider = normalizeProviderValue(providerInput?.value ?? "bianxie");
+      const provider = normalizeProviderValue(providerInput?.value ?? "gemini");
       const imageProvider = normalizeImageProviderValue(imageProviderInput?.value ?? "same");
       if (provider === "custom" && !getResolvedPrimaryBaseUrl()) {
         errorMsg.textContent = t("input.error_custom_base_url_required");
@@ -1438,7 +1438,7 @@
 
     function saveImportState() {
       const state = {
-        provider: normalizeProviderValue(providerInput?.value ?? "bianxie"),
+        provider: normalizeProviderValue(providerInput?.value ?? "gemini"),
         svgModel: svgModelInput?.value ?? "",
         apiKey: apiKeyInput?.value ?? "",
         baseUrl: normalizeCustomBaseUrl(baseUrlInput?.value ?? DEFAULT_CUSTOM_BASE_URL),
@@ -1536,7 +1536,7 @@
     }
 
     function syncProviderDefaults() {
-      const provider = normalizeProviderValue(providerInput?.value ?? "bianxie");
+      const provider = normalizeProviderValue(providerInput?.value ?? "gemini");
       const nextDefault = getDefaultSvgModel(provider);
       const previousDefault = svgModelInput?.dataset.suggestedDefault || "";
       const currentValue = svgModelInput?.value.trim() || "";
@@ -1679,11 +1679,7 @@
         errorMsg.textContent = t("importPage.error_upload_required");
         return;
       }
-      if (!(apiKeyInput?.value.trim() || "")) {
-        errorMsg.textContent = t("importPage.error_api_key_required");
-        return;
-      }
-      const provider = normalizeProviderValue(providerInput?.value ?? "bianxie");
+      const provider = normalizeProviderValue(providerInput?.value ?? "gemini");
       if (provider === "custom" && !getResolvedImportBaseUrl()) {
         errorMsg.textContent = t("importPage.error_custom_base_url_required");
         return;

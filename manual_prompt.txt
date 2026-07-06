@@ -1,0 +1,6 @@
+根据:
+[method txt]
+把流程逻辑、组件、箭头、阶段划分和关键视觉对象都写清楚，
+给我一份可复制使用的文本，
+方便我丢给这个autofigure-edit（（https://github.com/ResearAI/AutoFigure-Edit/blob/main/README_ZH.md）来generate SVG image
+

@@ -133,7 +133,7 @@ def _argparse_image_provider(value: str) -> str:
 PROVIDER_CONFIGS = {
     "openrouter": {
         "base_url": "https://openrouter.ai/api/v1",
-        "default_image_model": "google/gemini-3.1-flash-image-preview",
+        "default_image_model": "google/gemini-3.1-flash-image",
         "default_svg_model": "google/gemini-3.1-pro-preview",
     },
     "bianxie": {
@@ -143,12 +143,12 @@ PROVIDER_CONFIGS = {
     },
     "custom": {
         "base_url": _custom_base_url_default(),
-        "default_image_model": "gemini-3.1-flash-image-preview",
+        "default_image_model": "gemini-3.1-flash-image",
         "default_svg_model": "gemini-3.1-pro-preview",
     },
     "gemini": {
         "base_url": "https://generativelanguage.googleapis.com/v1beta",
-        "default_image_model": "gemini-3.1-flash-image-preview",
+        "default_image_model": "gemini-3.1-flash-image",
         "default_svg_model": "gemini-3.1-pro-preview",
     },
     "openai_response": {
@@ -487,6 +487,31 @@ def _build_openai_response_input(contents: List[Any]) -> List[Dict[str, Any]]:
     return [{"role": "user", "content": message_content}]
 
 
+def _openai_response_generation_kwargs(
+    model: str,
+    max_tokens: int,
+    temperature: float,
+) -> Dict[str, Any]:
+    kwargs: Dict[str, Any] = {"max_output_tokens": max_tokens}
+    if not model.lower().startswith("gpt-5"):
+        kwargs["temperature"] = temperature
+    reasoning_effort = (
+        os.environ.get("AUTOFIGURE_OPENAI_REASONING_EFFORT")
+        or os.environ.get("OPENAI_REASONING_EFFORT")
+        or ""
+    ).strip().lower()
+    if reasoning_effort:
+        supported_efforts = {"none", "minimal", "low", "medium", "high", "xhigh"}
+        if reasoning_effort in supported_efforts:
+            kwargs["reasoning"] = {"effort": reasoning_effort}
+        else:
+            print(
+                "[OpenAI Responses] Ignoring unsupported reasoning effort: "
+                f"{reasoning_effort}"
+            )
+    return kwargs
+
+
 def _call_openai_response_text(
     prompt: str,
     api_key: str,
@@ -503,8 +528,7 @@ def _call_openai_response_text(
         response = client.responses.create(
             model=model,
             input=[{"role": "user", "content": [{"type": "input_text", "text": prompt}]}],
-            max_output_tokens=max_tokens,
-            temperature=temperature,
+            **_openai_response_generation_kwargs(model, max_tokens, temperature),
         )
         return _extract_openai_response_text(response)
     except Exception as e:
@@ -528,8 +552,7 @@ def _call_openai_response_multimodal(
         response = client.responses.create(
             model=model,
             input=_build_openai_response_input(contents),
-            max_output_tokens=max_tokens,
-            temperature=temperature,
+            **_openai_response_generation_kwargs(model, max_tokens, temperature),
         )
         return _extract_openai_response_text(response)
     except Exception as e:
@@ -1110,13 +1133,34 @@ def _extract_gemini_text(response: Any) -> Optional[str]:
     return None
 
 
+def _coerce_to_pil_image(image: Any) -> Optional[Image.Image]:
+    """Convert Google SDK image wrappers or raw image data into a PIL image."""
+    if image is None:
+        return None
+    if isinstance(image, Image.Image):
+        return image
+    image_bytes = getattr(image, "image_bytes", None)
+    if isinstance(image_bytes, bytes) and image_bytes:
+        return Image.open(io.BytesIO(image_bytes))
+    data = getattr(image, "data", None)
+    if isinstance(data, bytes) and data:
+        return Image.open(io.BytesIO(data))
+    if isinstance(data, str) and data:
+        return Image.open(io.BytesIO(base64.b64decode(data)))
+    if isinstance(image, bytes) and image:
+        return Image.open(io.BytesIO(image))
+    if isinstance(image, str) and image:
+        return Image.open(io.BytesIO(base64.b64decode(image)))
+    return None
+
+
 def _extract_gemini_image(response: Any) -> Optional[Image.Image]:
     """从 Gemini 响应中提取图片（优先使用 part.as_image()）"""
     parts = getattr(response, "parts", None) or []
     for part in parts:
         as_image = getattr(part, "as_image", None)
         if callable(as_image):
-            image = as_image()
+            image = _coerce_to_pil_image(as_image())
             if image is not None:
                 return image
 
@@ -1136,9 +1180,13 @@ def _extract_gemini_image(response: Any) -> Optional[Image.Image]:
         for part in candidate_parts:
             as_image = getattr(part, "as_image", None)
             if callable(as_image):
-                image = as_image()
+                image = _coerce_to_pil_image(as_image())
                 if image is not None:
                     return image
+            inline_data = getattr(part, "inline_data", None) or getattr(part, "inlineData", None)
+            image = _coerce_to_pil_image(inline_data)
+            if image is not None:
+                return image
     return None
 
 

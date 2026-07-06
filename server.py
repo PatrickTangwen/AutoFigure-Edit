@@ -34,6 +34,7 @@ PYTHON_EXECUTABLE = os.environ.get("AUTOFIGURE_PYTHON") or sys.executable
 DEFAULT_SAM_PROMPT = "icon,person,robot,animal"
 DEFAULT_PLACEHOLDER_MODE = "label"
 DEFAULT_MERGE_THRESHOLD = 0.01
+DEFAULT_PROVIDER = "gemini"
 
 SVG_EDIT_CANDIDATES = [
     ("vendor/svg-edit/editor/index.html", WEB_DIR / "vendor" / "svg-edit" / "editor" / "index.html"),
@@ -87,7 +88,7 @@ class Job:
 
 class RunRequest(BaseModel):
     method_text: Optional[str] = None
-    provider: str = "bianxie"
+    provider: str = DEFAULT_PROVIDER
     api_key: Optional[str] = None
     base_url: Optional[str] = None
     image_provider: Optional[str] = None
@@ -147,6 +148,109 @@ def get_config() -> JSONResponse:
     return JSONResponse({"svgEditAvailable": available, "svgEditPath": rel_path})
 
 
+def _env_first(*names: str) -> str | None:
+    for name in names:
+        value = os.environ.get(name)
+        if value:
+            return value
+    return None
+
+
+def _default_api_key_for_provider(provider: str | None) -> str | None:
+    if provider == "openai_response":
+        return _env_first("OPENAI_API_KEY")
+    if provider == "bianxie":
+        return _env_first("BIANXIE_API_KEY", "AUTOFIGURE_BIANXIE_API_KEY")
+    if provider == "openrouter":
+        return _env_first("OPENROUTER_API_KEY")
+    if provider == "gemini":
+        return _env_first("GEMINI_API_KEY", "GOOGLE_API_KEY")
+    if provider == "custom":
+        return _env_first("AUTOFIGURE_CUSTOM_API_KEY", "CUSTOM_API_KEY")
+    return None
+
+
+def _default_image_api_key(
+    image_provider: str | None,
+    provider: str | None,
+    api_key: str | None,
+) -> str | None:
+    effective_image_provider = image_provider
+    if not effective_image_provider:
+        effective_image_provider = "openai" if provider == "openai_response" else provider
+    if effective_image_provider == "openai":
+        return _env_first("OPENAI_API_KEY") or api_key
+    if effective_image_provider == provider:
+        return api_key
+    return _default_api_key_for_provider(effective_image_provider) or api_key
+
+
+def _default_sam_api_key(sam_backend: str | None) -> str | None:
+    if sam_backend == "fal":
+        return _env_first("FAL_KEY")
+    if sam_backend in {None, "roboflow", "api"}:
+        return _env_first("ROBOFLOW_API_KEY", "FAL_KEY")
+    return None
+
+
+def _key_looks_like_openai(key: str | None) -> bool:
+    return bool(key and key.strip().startswith("sk-"))
+
+
+def _key_looks_like_google(key: str | None) -> bool:
+    return bool(key and key.strip().startswith("AIza"))
+
+
+def _resolve_api_key_for_provider(provider: str | None, requested_api_key: str | None) -> str | None:
+    if provider == "gemini":
+        return _default_api_key_for_provider("gemini") or requested_api_key
+    if provider == "openai_response" and _key_looks_like_google(requested_api_key):
+        return _default_api_key_for_provider("openai_response")
+    return requested_api_key or _default_api_key_for_provider(provider)
+
+
+def _resolve_image_api_key_for_provider(
+    image_provider: str | None,
+    provider: str | None,
+    requested_image_api_key: str | None,
+    api_key: str | None,
+) -> str | None:
+    effective_image_provider = image_provider
+    if not effective_image_provider:
+        effective_image_provider = "openai" if provider == "openai_response" else provider
+    if effective_image_provider == "gemini":
+        return _default_api_key_for_provider("gemini") or requested_image_api_key or api_key
+    if effective_image_provider == "openai" and _key_looks_like_google(requested_image_api_key):
+        return _default_api_key_for_provider("openai_response")
+    return requested_image_api_key or _default_image_api_key(
+        image_provider,
+        provider,
+        api_key,
+    )
+
+
+def _resolve_provider(provider: str | None, requested_api_key: str | None) -> str:
+    resolved = provider or DEFAULT_PROVIDER
+    if resolved == "bianxie" and not (
+        requested_api_key or _default_api_key_for_provider("bianxie")
+    ):
+        for fallback_provider in (DEFAULT_PROVIDER, "openai_response"):
+            if _default_api_key_for_provider(fallback_provider):
+                return fallback_provider
+    return resolved
+
+
+def _new_job_id() -> str:
+    base = "output_" + datetime.now().strftime("%Y-%m-%d_%H-%M")
+    if not (OUTPUTS_DIR / base).exists():
+        return base
+    for index in range(2, 1000):
+        candidate = f"{base}_{index:02d}"
+        if not (OUTPUTS_DIR / candidate).exists():
+            return candidate
+    return f"{base}_{uuid.uuid4().hex[:8]}"
+
+
 @app.get("/api/history")
 def list_history(limit: int = 200) -> JSONResponse:
     items = []
@@ -186,9 +290,24 @@ def run_job(req: RunRequest) -> JSONResponse:
             detail="Provide exactly one of method_text or input_figure_path",
         )
 
-    job_id = datetime.now().strftime("%Y%m%d_%H%M%S_") + uuid.uuid4().hex[:8]
+    job_id = _new_job_id()
     output_dir = OUTPUTS_DIR / job_id
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    provider = _resolve_provider(req.provider, req.api_key)
+    api_key = _resolve_api_key_for_provider(provider, req.api_key)
+    image_api_key = _resolve_image_api_key_for_provider(
+        req.image_provider,
+        provider,
+        req.image_api_key,
+        api_key,
+    )
+    sam_api_key = req.sam_api_key or _default_sam_api_key(req.sam_backend)
+    svg_model = req.svg_model
+    if provider == "openai_response" and (
+        not svg_model or "gemini" in svg_model.lower()
+    ):
+        svg_model = "gpt-5.5"
 
     cmd = [
         PYTHON_EXECUTABLE,
@@ -196,7 +315,7 @@ def run_job(req: RunRequest) -> JSONResponse:
         "--output_dir",
         str(output_dir),
         "--provider",
-        req.provider or "bianxie",
+        provider,
     ]
     if method_text:
         cmd += ["--method_text", method_text]
@@ -208,14 +327,14 @@ def run_job(req: RunRequest) -> JSONResponse:
         )
         cmd += ["--input_figure_path", resolved_input_path]
 
-    if req.api_key:
-        cmd += ["--api_key", req.api_key]
+    if api_key:
+        cmd += ["--api_key", api_key]
     if req.base_url:
         cmd += ["--base_url", req.base_url]
     if req.image_provider:
         cmd += ["--image_provider", req.image_provider]
-    if req.image_api_key:
-        cmd += ["--image_api_key", req.image_api_key]
+    if image_api_key:
+        cmd += ["--image_api_key", image_api_key]
     if req.image_base_url:
         cmd += ["--image_base_url", req.image_base_url]
     if req.image_model:
@@ -224,8 +343,8 @@ def run_job(req: RunRequest) -> JSONResponse:
         cmd += ["--image_size", req.image_size]
     if req.enable_upscale is False:
         cmd += ["--disable_auto_upscale"]
-    if req.svg_model:
-        cmd += ["--svg_model", req.svg_model]
+    if svg_model:
+        cmd += ["--svg_model", svg_model]
 
     sam_prompt = req.sam_prompt or DEFAULT_SAM_PROMPT
     placeholder_mode = req.placeholder_mode or DEFAULT_PLACEHOLDER_MODE
@@ -238,8 +357,8 @@ def run_job(req: RunRequest) -> JSONResponse:
     cmd += ["--merge_threshold", str(merge_threshold)]
     if req.sam_backend:
         cmd += ["--sam_backend", req.sam_backend]
-    if req.sam_api_key:
-        cmd += ["--sam_api_key", req.sam_api_key]
+    if sam_api_key:
+        cmd += ["--sam_api_key", sam_api_key]
     if req.sam_max_masks is not None:
         cmd += ["--sam_max_masks", str(req.sam_max_masks)]
     if req.optimize_iterations is not None:
@@ -391,6 +510,25 @@ def _history_sort_key(output_dir: Path) -> float:
 
 
 def _history_timestamp_from_job_id(job_id: str) -> datetime | None:
+    if job_id.startswith("output_"):
+        parts = job_id.split("_")
+        if len(parts) >= 3:
+            try:
+                return datetime.strptime(
+                    f"{parts[1]}_{parts[2]}",
+                    "%Y-%m-%d_%H-%M",
+                )
+            except ValueError:
+                pass
+        parts = job_id.rsplit("_", 2)
+        if len(parts) == 3:
+            try:
+                return datetime.strptime(
+                    f"{parts[1]}_{parts[2]}",
+                    "%Y%m%d_%H%M%S",
+                )
+            except ValueError:
+                pass
     try:
         return datetime.strptime(job_id[:15], "%Y%m%d_%H%M%S")
     except ValueError:
