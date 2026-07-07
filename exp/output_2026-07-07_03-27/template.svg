@@ -1,0 +1,570 @@
+<svg width="3840" height="2560" viewBox="0 0 3840 2560" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueHeader" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a68b1"/>
+      <stop offset="1" stop-color="#18549d"/>
+    </linearGradient>
+    <linearGradient id="tealHeader" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#21a59a"/>
+      <stop offset="1" stop-color="#0f8e84"/>
+    </linearGradient>
+    <linearGradient id="orangeHeader" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f49a24"/>
+      <stop offset="1" stop-color="#eb821d"/>
+    </linearGradient>
+    <linearGradient id="purpleHeader" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#735ca2"/>
+      <stop offset="1" stop-color="#62488e"/>
+    </linearGradient>
+    <linearGradient id="cylBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b5ca3"/>
+      <stop offset="0.55" stop-color="#2e73bf"/>
+      <stop offset="1" stop-color="#0e4a8d"/>
+    </linearGradient>
+    <marker id="arrowBlue" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#1859a5"/>
+    </marker>
+    <marker id="arrowBlack" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#111"/>
+    </marker>
+    <marker id="arrowTeal" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#087d77"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#6b4b9e"/>
+    </marker>
+    <marker id="arrowHeavy" markerWidth="18" markerHeight="16" refX="16" refY="8" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L16,8 L0,16 Z" fill="#111"/>
+    </marker>
+    <filter id="softShadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      text{font-family:Arial, Helvetica, sans-serif; fill:#111}
+      .title{font-size:68px;font-weight:800;letter-spacing:.2px}
+      .colTitle{font-size:50px;font-weight:800;fill:white}
+      .subTitleBlue{font-size:34px;font-weight:800;fill:#1356a5}
+      .subTitleTeal{font-size:38px;font-weight:800;fill:#077f78}
+      .subTitleOrange{font-size:38px;font-weight:800;fill:#cc4f09}
+      .subTitlePurple{font-size:34px;font-weight:800;fill:#4a2b7f}
+      .body{font-size:28px;font-weight:500}
+      .bodySmall{font-size:24px;font-weight:500}
+      .bullet{font-size:28px;font-weight:500}
+      .math{font-family:'Times New Roman', Times, serif;font-size:34px;font-style:italic}
+      .mathSmall{font-family:'Times New Roman', Times, serif;font-size:28px;font-style:italic}
+      .blueStroke{stroke:#1859a5;stroke-width:4;fill:none}
+      .tealStroke{stroke:#15958c;stroke-width:4;fill:none}
+      .orangeStroke{stroke:#ef8420;stroke-width:4;fill:none}
+      .purpleStroke{stroke:#6b4b9e;stroke-width:4;fill:none}
+      .greenStroke{stroke:#6ba34d;stroke-width:4;fill:none}
+      .panelFill{fill:#fffffd;fill-opacity:.88}
+      .softFill{fill:#f7fbfa;fill-opacity:.82}
+      .dashBlue{stroke:#1859a5;stroke-width:4;stroke-dasharray:16 10;fill:none}
+      .dashTeal{stroke:#15958c;stroke-width:4;stroke-dasharray:12 9;fill:none}
+      .dashPurple{stroke:#6b4b9e;stroke-width:4;stroke-dasharray:10 8;fill:none}
+    </style>
+  </defs>
+
+  <rect width="3840" height="2560" fill="#ffffff"/>
+  <text class="title" x="1920" y="84" text-anchor="middle">Overview of the ALIGATEHR-Gen framework</text>
+
+  <!-- 1. Data Processing -->
+  <g id="data-processing">
+    <rect x="43" y="140" width="944" height="2058" rx="16" fill="#ffffff" stroke="#1859a5" stroke-width="5"/>
+    <rect x="54" y="150" width="922" height="91" fill="url(#blueHeader)"/>
+    <text class="colTitle" x="515" y="213" text-anchor="middle">1. Data Processing</text>
+
+    <!-- UK Biobank cylinder -->
+    <g>
+      <path d="M68,862 C68,820 254,820 254,862 L254,1023 C254,1065 68,1065 68,1023 Z" fill="url(#cylBlue)" stroke="#0a4181" stroke-width="4"/>
+      <ellipse cx="161" cy="862" rx="93" ry="36" fill="#d9ecff" stroke="#0a4181" stroke-width="4"/>
+      <path d="M68,1023 C68,1065 254,1065 254,1023" fill="none" stroke="#0a4181" stroke-width="4"/>
+      <text x="161" y="969" text-anchor="middle" fill="white" font-size="31" font-weight="700">UK Biobank</text>
+      <text x="161" y="1022" text-anchor="middle" fill="white" font-size="31" font-weight="700">(UKB)</text>
+    </g>
+
+    <!-- Blue input arrows -->
+    <path d="M254,943 C292,943 292,524 365,524" stroke="#1859a5" stroke-width="8" fill="none" marker-end="url(#arrowBlue)"/>
+    <path d="M254,943 C292,943 292,1214 338,1214" stroke="#1859a5" stroke-width="8" fill="none" marker-end="url(#arrowBlue)"/>
+
+    <!-- De-identified EHR card -->
+    <rect x="377" y="284" width="438" height="684" rx="14" fill="#fff" stroke="#70a8e4" stroke-width="4"/>
+    <text class="subTitleBlue" x="410" y="338">A. De-identified EHR</text>
+    <text class="bullet" x="545" y="407">• Primary care data</text>
+    <text class="bodySmall" x="574" y="449">(up to 2016/2017)</text>
+    <text class="bullet" x="545" y="508">• Hospital inpatient data</text>
+    <text class="bodySmall" x="574" y="550">(through 2022)</text>
+    <text x="536" y="645" text-anchor="middle" fill="#1859a5" font-size="28" font-weight="800">Extract:</text>
+    <text class="bullet" x="463" y="704">• Diagnosis history</text>
+    <text class="bullet" x="463" y="756">• Visit sequence</text>
+    <text class="bullet" x="463" y="808">• ICD codes</text>
+    <text class="bullet" x="463" y="860">• Demographics</text>
+    <text class="bodySmall" x="505" y="910">(age, sex)</text>
+
+    <!-- Genetic data card -->
+    <rect x="350" y="1055" width="356" height="463" rx="14" fill="#fff" stroke="#70a8e4" stroke-width="4"/>
+    <text class="subTitleBlue" x="390" y="1114">B. Genetic data</text>
+    <text class="bullet" x="497" y="1195">Genome-wide</text>
+    <text class="bullet" x="497" y="1247">SNP data</text>
+    <text x="414" y="1382" fill="#1859a5" font-size="28" font-weight="800">Used to infer:</text>
+    <text class="bullet" x="370" y="1434">• Kinship coefficients</text>
+    <text class="bullet" x="370" y="1484">• Identify relatives</text>
+    <path d="M706,1173 H824" stroke="#1859a5" stroke-width="8" fill="none" marker-end="url(#arrowBlue)"/>
+
+    <!-- processed cohort -->
+    <rect x="844" y="938" width="244" height="377" rx="31" fill="#f8fbff" stroke="#1859a5" stroke-width="4"/>
+    <g fill="#2a64ae" stroke="#1859a5" stroke-width="3">
+      <circle cx="917" cy="1006" r="16"/>
+      <circle cx="968" cy="995" r="20"/>
+      <circle cx="1021" cy="1006" r="16"/>
+      <path d="M890,1080 L890,1048 C890,1028 944,1028 944,1048 L944,1080 Z"/>
+      <path d="M935,1086 L935,1039 C935,1011 1002,1011 1002,1039 L1002,1086 Z"/>
+      <path d="M994,1080 L994,1048 C994,1028 1047,1028 1047,1048 L1047,1080 Z"/>
+    </g>
+    <text x="966" y="1160" text-anchor="middle" fill="#1859a5" font-size="31" font-weight="800">Processed</text>
+    <text x="966" y="1212" text-anchor="middle" fill="#1859a5" font-size="31" font-weight="800">cohort with</text>
+    <text x="966" y="1264" text-anchor="middle" fill="#1859a5" font-size="31" font-weight="800">EHR + genetics</text>
+    <path d="M815,622 H906 V922" stroke="#1859a5" stroke-width="7" fill="none" marker-end="url(#arrowBlue)"/>
+    <path d="M968,938 V656 H815" stroke="#1859a5" stroke-width="5" fill="none"/>
+
+    <!-- kinship inference -->
+    <path d="M517,1518 V1597" stroke="#1859a5" stroke-width="6" fill="none" marker-end="url(#arrowBlue)"/>
+    <rect x="276" y="1610" width="444" height="344" rx="13" fill="#fff" stroke="#1859a5" stroke-width="4" stroke-dasharray="14 8"/>
+    <text x="498" y="1658" text-anchor="middle" fill="#1859a5" font-size="28" font-weight="700">Infer close relatives using</text>
+    <text x="498" y="1704" text-anchor="middle" fill="#1859a5" font-size="28" font-weight="700">kinship coefficients</text>
+    <g fill="#2a64ae" stroke="#1859a5" stroke-width="3">
+      <circle cx="363" cy="1750" r="14"/><path d="M340,1810 L340,1779 C340,1761 386,1761 386,1779 L386,1810 Z"/>
+      <circle cx="497" cy="1760" r="14"/><path d="M474,1820 L474,1789 C474,1771 520,1771 520,1789 L520,1820 Z"/>
+      <circle cx="631" cy="1750" r="14"/><path d="M608,1810 L608,1779 C608,1761 654,1761 654,1779 L654,1810 Z"/>
+      <line x1="388" y1="1788" x2="467" y2="1788" stroke="#1859a5" stroke-width="6"/>
+      <line x1="527" y1="1788" x2="606" y2="1788" stroke="#1859a5" stroke-width="6"/>
+    </g>
+    <text x="498" y="1868" text-anchor="middle" font-size="27" font-weight="600">First-degree relatives:</text>
+    <text x="498" y="1918" text-anchor="middle" font-size="27" font-weight="600">kinship coefficient ≥ 0.177</text>
+
+    <!-- Demographic embeddings -->
+    <rect x="760" y="1894" width="410" height="251" rx="14" fill="#fff" stroke="#1859a5" stroke-width="4"/>
+    <text x="965" y="1944" text-anchor="middle" font-size="28" font-weight="700">Demographic embeddings:</text>
+    <text x="965" y="1992" text-anchor="middle" font-size="27" font-weight="600">age, sex</text>
+
+    <!-- dashed blue arrows -->
+    <path d="M720,1722 H846 V1390" stroke="#1859a5" stroke-width="5" stroke-dasharray="18 12" fill="none" marker-end="url(#arrowBlue)"/>
+    <path d="M846,1722 H906 V1885" stroke="#1859a5" stroke-width="5" stroke-dasharray="18 12" fill="none" marker-end="url(#arrowBlue)"/>
+    <path d="M906,1894 V1325" stroke="#1859a5" stroke-width="5" stroke-dasharray="18 12" fill="none" marker-end="url(#arrowBlue)"/>
+
+    <!-- black graph-building arrows -->
+    <text x="1102" y="515" text-anchor="middle" font-size="29" font-weight="600">Build patient</text>
+    <text x="1102" y="563" text-anchor="middle" font-size="29" font-weight="600">graph from</text>
+    <text x="1102" y="611" text-anchor="middle" font-size="29" font-weight="600">inferred</text>
+    <text x="1102" y="659" text-anchor="middle" font-size="29" font-weight="600">relatives</text>
+    <path d="M1028,690 V1608" stroke="#111" stroke-width="6" fill="none"/>
+    <path d="M1028,690 H1195" stroke="#111" stroke-width="6" fill="none" marker-end="url(#arrowBlack)"/>
+    <text x="1101" y="1664" text-anchor="middle" font-size="29" font-weight="600">Build ontology</text>
+    <text x="1101" y="1712" text-anchor="middle" font-size="29" font-weight="600">graph from</text>
+    <text x="1101" y="1760" text-anchor="middle" font-size="29" font-weight="600">medical</text>
+    <text x="1101" y="1808" text-anchor="middle" font-size="29" font-weight="600">ontology</text>
+    <path d="M1028,1608 H1195" stroke="#111" stroke-width="6" fill="none" marker-end="url(#arrowBlack)"/>
+  </g>
+
+  <!-- 2. Graph Construction -->
+  <g id="graph-construction">
+    <rect x="1205" y="140" width="690" height="2018" rx="16" fill="#ffffff" stroke="#15958c" stroke-width="5"/>
+    <rect x="1216" y="150" width="668" height="91" fill="url(#tealHeader)"/>
+    <text class="colTitle" x="1550" y="213" text-anchor="middle">2. Graph Construction</text>
+
+    <!-- Patient Graph -->
+    <rect x="1218" y="272" width="666" height="924" rx="14" class="panelFill" stroke="#15958c" stroke-width="4"/>
+    <rect x="1218" y="272" width="666" height="80" fill="#f3fbfa" stroke="#15958c" stroke-width="4"/>
+    <text class="subTitleTeal" x="1551" y="330" text-anchor="middle">Patient Graph</text>
+
+    <g stroke="#087d77" stroke-width="6" stroke-dasharray="16 11" fill="none" marker-end="url(#arrowTeal)">
+      <path d="M1533,520 L1407,442"/>
+      <path d="M1550,500 L1656,423"/>
+      <path d="M1463,560 L1321,548"/>
+      <path d="M1467,621 L1332,704"/>
+      <path d="M1615,568 L1741,552"/>
+    </g>
+    <g>
+      <circle cx="1536" cy="565" r="73" fill="#dff2ef" stroke="#15958c" stroke-width="4"/>
+      <text class="math" x="1536" y="550" text-anchor="middle">i</text>
+      <text x="1536" y="594" text-anchor="middle" font-size="21">(index</text>
+      <text x="1536" y="626" text-anchor="middle" font-size="21">patient)</text>
+      <circle cx="1367" cy="415" r="42" fill="#dff2ef" stroke="#15958c" stroke-width="3"/>
+      <text class="mathSmall" x="1367" y="425" text-anchor="middle">j₁</text>
+      <circle cx="1686" cy="415" r="42" fill="#dff2ef" stroke="#15958c" stroke-width="3"/>
+      <text class="mathSmall" x="1686" y="425" text-anchor="middle">j₂</text>
+      <circle cx="1281" cy="528" r="42" fill="#dff2ef" stroke="#15958c" stroke-width="3"/>
+      <text class="mathSmall" x="1281" y="538" text-anchor="middle">j₂</text>
+      <circle cx="1781" cy="568" r="42" fill="#dff2ef" stroke="#15958c" stroke-width="3"/>
+      <text class="mathSmall" x="1781" y="578" text-anchor="middle">j₃</text>
+      <circle cx="1330" cy="707" r="42" fill="#dff2ef" stroke="#15958c" stroke-width="3"/>
+      <text class="mathSmall" x="1330" y="717" text-anchor="middle">j₄</text>
+      <text x="1528" y="489" text-anchor="middle" font-size="39" font-weight="700">⋮</text>
+      <text x="1770" y="686" text-anchor="middle" font-size="40" font-weight="700">...</text>
+    </g>
+    <text class="body" x="1257" y="813">Nodes: patients</text>
+    <text class="body" x="1257" y="861">Edges: first-degree relatives</text>
+    <text class="body" x="1257" y="909">Edge criterion: kinship</text>
+    <text class="body" x="1346" y="957">coefficient ≥ 0.177</text>
+    <rect x="1248" y="999" width="478" height="170" fill="#fff" stroke="#15958c" stroke-width="4" stroke-dasharray="12 8"/>
+    <text x="1487" y="1058" text-anchor="middle" font-size="29">Patient feature:  <tspan class="mathSmall">hᵢ ∈ Rᶜ</tspan></text>
+    <text x="1487" y="1110" text-anchor="middle" font-size="29">Disease status vector over</text>
+    <text x="1487" y="1158" text-anchor="middle" font-size="29">diagnosis codes</text>
+
+    <!-- Ontology Graph -->
+    <rect x="1218" y="1250" width="666" height="861" rx="14" class="panelFill" stroke="#15958c" stroke-width="4"/>
+    <rect x="1218" y="1250" width="666" height="78" fill="#f3fbfa" stroke="#15958c" stroke-width="4"/>
+    <text class="subTitleTeal" x="1551" y="1305" text-anchor="middle">Ontology Graph</text>
+
+    <rect x="1346" y="1363" width="338" height="73" rx="9" fill="#e4f1da" stroke="#6ba34d" stroke-width="4"/>
+    <text x="1515" y="1412" text-anchor="middle" font-size="28" font-weight="600">Medical Concepts</text>
+    <g stroke="#111" stroke-width="5" fill="none" marker-end="url(#arrowBlack)">
+      <path d="M1458,1436 L1324,1524"/>
+      <path d="M1515,1436 L1515,1524"/>
+      <path d="M1576,1436 L1710,1524"/>
+      <path d="M1304,1630 L1282,1734"/>
+      <path d="M1361,1630 L1390,1734"/>
+      <path d="M1500,1630 L1482,1734"/>
+      <path d="M1558,1630 L1590,1734"/>
+      <path d="M1691,1630 L1668,1734"/>
+      <path d="M1753,1630 L1794,1734"/>
+    </g>
+    <g>
+      <rect x="1230" y="1528" width="194" height="103" rx="10" fill="#e4f1da" stroke="#6ba34d" stroke-width="4"/>
+      <text x="1327" y="1572" text-anchor="middle" font-size="24">Cardiovascular</text>
+      <text x="1327" y="1614" text-anchor="middle" font-size="24">Diseases</text>
+      <rect x="1444" y="1528" width="142" height="103" rx="10" fill="#e4f1da" stroke="#6ba34d" stroke-width="4"/>
+      <text x="1515" y="1572" text-anchor="middle" font-size="24">Metabolic</text>
+      <text x="1515" y="1614" text-anchor="middle" font-size="24">Diseases</text>
+      <rect x="1628" y="1528" width="174" height="103" rx="10" fill="#e4f1da" stroke="#6ba34d" stroke-width="4"/>
+      <text x="1715" y="1572" text-anchor="middle" font-size="24">Respiratory</text>
+      <text x="1715" y="1614" text-anchor="middle" font-size="24">Diseases</text>
+      <circle cx="1280" cy="1785" r="48" fill="#e4f1da" stroke="#6ba34d" stroke-width="4"/>
+      <circle cx="1393" cy="1785" r="48" fill="#e4f1da" stroke="#6ba34d" stroke-width="4"/>
+      <circle cx="1488" cy="1785" r="48" fill="#e4f1da" stroke="#6ba34d" stroke-width="4"/>
+      <circle cx="1793" cy="1785" r="48" fill="#e4f1da" stroke="#6ba34d" stroke-width="4"/>
+      <text class="mathSmall" x="1280" y="1795" text-anchor="middle">d₁</text>
+      <text class="mathSmall" x="1393" y="1795" text-anchor="middle">d₂</text>
+      <text class="mathSmall" x="1488" y="1795" text-anchor="middle">d₃</text>
+      <text class="mathSmall" x="1793" y="1795" text-anchor="middle">d|C|</text>
+      <text x="1611" y="1790" text-anchor="middle" font-size="42" font-weight="700">...</text>
+      <text x="1846" y="1549" font-size="38" font-weight="700">...</text>
+    </g>
+    <text class="body" x="1248" y="1932">Directed acyclic graph (DAG)</text>
+    <text class="body" x="1248" y="1985">Parent nodes: general concepts</text>
+    <text class="body" x="1248" y="2038">Child nodes / leaves: diagnosis codes</text>
+  </g>
+
+  <!-- arrows from graph construction to attention -->
+  <path d="M1895,565 H1970" stroke="#111" stroke-width="6" fill="none" marker-end="url(#arrowBlack)"/>
+  <path d="M1895,1611 H1970" stroke="#111" stroke-width="6" fill="none" marker-end="url(#arrowBlack)"/>
+
+  <!-- 3. Attention Layer -->
+  <g id="attention-layer">
+    <rect x="1976" y="140" width="930" height="1980" rx="16" fill="#ffffff" stroke="#ef8420" stroke-width="5"/>
+    <rect x="1987" y="150" width="908" height="91" fill="url(#orangeHeader)"/>
+    <text class="colTitle" x="2441" y="213" text-anchor="middle">3. Attention Layer</text>
+
+    <!-- Patient Graph Attention -->
+    <rect x="1994" y="272" width="888" height="873" rx="14" class="panelFill" stroke="#ef8420" stroke-width="4"/>
+    <rect x="1994" y="272" width="888" height="80" fill="#fff9f1" stroke="#ef8420" stroke-width="4"/>
+    <text class="subTitleOrange" x="2438" y="330" text-anchor="middle">Patient Graph Attention</text>
+
+    <g>
+      <circle cx="2114" cy="415" r="42" fill="#dff2ef" stroke="#15958c" stroke-width="3"/>
+      <text class="mathSmall" x="2114" y="425" text-anchor="middle">j₁</text>
+      <circle cx="2402" cy="415" r="42" fill="#dff2ef" stroke="#15958c" stroke-width="3"/>
+      <text class="mathSmall" x="2402" y="425" text-anchor="middle">j₂</text>
+      <circle cx="2054" cy="558" r="42" fill="#dff2ef" stroke="#15958c" stroke-width="3"/>
+      <text class="mathSmall" x="2054" y="568" text-anchor="middle">j₃</text>
+      <circle cx="2094" cy="714" r="42" fill="#dff2ef" stroke="#15958c" stroke-width="3"/>
+      <text class="mathSmall" x="2094" y="724" text-anchor="middle">j₄</text>
+      <circle cx="2246" cy="588" r="66" fill="#dff2ef" stroke="#15958c" stroke-width="4"/>
+      <text class="math" x="2246" y="604" text-anchor="middle">i</text>
+      <g stroke="#333" stroke-width="7" fill="none" marker-end="url(#arrowBlack)">
+        <path d="M2145,455 L2198,526"/>
+        <path d="M2373,455 L2297,526"/>
+        <path d="M2095,566 L2184,587"/>
+        <path d="M2124,687 L2192,635"/>
+      </g>
+      <text class="mathSmall" x="2190" y="458">α′ᵢ₄</text>
+      <text class="mathSmall" x="2350" y="529">α′ᵢ₂</text>
+      <text class="mathSmall" x="2180" y="708">α′ᵢ₄</text>
+      <text x="2432" y="614" font-size="42" font-weight="700">...</text>
+      <text x="2510" y="480" font-size="27" font-weight="600">Message</text>
+      <text x="2505" y="525" font-size="27" font-weight="600">aggregation</text>
+      <line x1="2311" y1="604" x2="2625" y2="604" stroke="#111" stroke-width="4"/>
+      <line x1="2505" y1="604" x2="2604" y2="604" stroke="#111" stroke-width="25" marker-end="url(#arrowHeavy)"/>
+      <rect x="2654" y="549" width="189" height="174" rx="18" fill="#e7f6f1" stroke="#15958c" stroke-width="4"/>
+      <text class="math" x="2748" y="610" text-anchor="middle">h′ᵢ</text>
+      <text x="2748" y="656" text-anchor="middle" font-size="24">Patient</text>
+      <text x="2748" y="698" text-anchor="middle" font-size="24">representation</text>
+    </g>
+    <rect x="2014" y="778" width="460" height="154" rx="14" fill="#fff" stroke="#ef8420" stroke-width="3"/>
+    <text class="math" x="2038" y="862">h′ᵢ = σ</text>
+    <text class="math" x="2158" y="862">( ∑</text>
+    <text class="mathSmall" x="2224" y="896">j∈Nᵢ</text>
+    <text class="math" x="2300" y="862">α′ᵢⱼ Wₑhⱼ )</text>
+    <rect x="2499" y="778" width="356" height="154" rx="14" fill="#fff" stroke="#ef8420" stroke-width="3"/>
+    <text class="mathSmall" x="2527" y="836">α′ᵢⱼ = softmax(e′ᵢⱼ)</text>
+    <text class="mathSmall" x="2527" y="890">e′ᵢⱼ = α(Wₑhᵢ, Wₑhⱼ)</text>
+    <text x="2023" y="1002" fill="#d45713" font-size="29">• Single-layer feedforward attention</text>
+    <text x="2023" y="1051" fill="#d45713" font-size="29">• Captures importance of first-degree</text>
+    <text x="2055" y="1096" fill="#d45713" font-size="29">relatives’ disease features</text>
+
+    <!-- Ontology Graph Attention -->
+    <rect x="1994" y="1185" width="888" height="936" rx="14" class="panelFill" stroke="#ef8420" stroke-width="4"/>
+    <rect x="1994" y="1185" width="888" height="78" fill="#fff9f1" stroke="#ef8420" stroke-width="4"/>
+    <text class="subTitleOrange" x="2438" y="1240" text-anchor="middle">Ontology Graph Attention</text>
+
+    <g>
+      <rect x="2014" y="1280" width="168" height="98" rx="10" fill="#e4f1da" stroke="#6ba34d" stroke-width="4"/>
+      <text x="2098" y="1320" text-anchor="middle" font-size="24">Ancestor</text>
+      <text x="2098" y="1358" text-anchor="middle" font-size="24">concept 1</text>
+      <rect x="2261" y="1280" width="168" height="98" rx="10" fill="#e4f1da" stroke="#6ba34d" stroke-width="4"/>
+      <text x="2345" y="1320" text-anchor="middle" font-size="24">Ancestor</text>
+      <text x="2345" y="1358" text-anchor="middle" font-size="24">concept j</text>
+      <rect x="2512" y="1280" width="168" height="98" rx="10" fill="#e4f1da" stroke="#6ba34d" stroke-width="4"/>
+      <text x="2596" y="1320" text-anchor="middle" font-size="24">Ancestor</text>
+      <text x="2596" y="1358" text-anchor="middle" font-size="24">concept m</text>
+      <text x="2194" y="1332" text-anchor="middle" font-size="36" font-weight="800">...</text>
+      <text x="2473" y="1332" text-anchor="middle" font-size="36" font-weight="800">...</text>
+      <rect x="2028" y="1398" width="111" height="60" rx="7" fill="#edf8e7" stroke="#6ba34d" stroke-width="3"/>
+      <rect x="2282" y="1398" width="96" height="60" rx="7" fill="#edf8e7" stroke="#6ba34d" stroke-width="3"/>
+      <rect x="2536" y="1398" width="96" height="60" rx="7" fill="#edf8e7" stroke="#6ba34d" stroke-width="3"/>
+      <text class="mathSmall" x="2084" y="1440" text-anchor="middle">e₁</text>
+      <text class="mathSmall" x="2330" y="1440" text-anchor="middle">eⱼ</text>
+      <text class="mathSmall" x="2584" y="1440" text-anchor="middle">eₘ</text>
+
+      <circle cx="2330" cy="1645" r="69" fill="#e4f1da" stroke="#6ba34d" stroke-width="4"/>
+      <text class="math" x="2330" y="1630" text-anchor="middle">dᵢ</text>
+      <text x="2330" y="1672" text-anchor="middle" font-size="22">(diagnosis</text>
+      <text x="2330" y="1706" text-anchor="middle" font-size="22">code)</text>
+      <rect x="2257" y="1767" width="145" height="61" rx="7" fill="#edf8e7" stroke="#6ba34d" stroke-width="3"/>
+      <text class="mathSmall" x="2330" y="1808" text-anchor="middle">eᵢ (self)</text>
+      <g stroke="#111" stroke-width="4" fill="none" marker-end="url(#arrowBlack)">
+        <path d="M2100,1458 L2282,1591"/>
+        <path d="M2330,1458 L2330,1562"/>
+        <path d="M2584,1458 L2381,1591"/>
+        <path d="M2330,1767 L2330,1720"/>
+        <path d="M2398,1645 H2641"/>
+      </g>
+      <g stroke="#111" stroke-width="4" fill="none" marker-end="url(#arrowBlack)">
+        <path d="M2284,1590 L2115,1465"/>
+        <path d="M2381,1590 L2564,1465"/>
+      </g>
+      <text class="mathSmall" x="2128" y="1545">αᵢ₁</text>
+      <text class="mathSmall" x="2290" y="1540">αᵢⱼ</text>
+      <text x="2376" y="1520" font-size="34" font-weight="800">...</text>
+      <text class="mathSmall" x="2528" y="1545">αᵢₘ</text>
+      <rect x="2648" y="1573" width="199" height="169" rx="18" fill="#e7f6f1" stroke="#15958c" stroke-width="4"/>
+      <text class="math" x="2748" y="1630" text-anchor="middle">gᵢ</text>
+      <text x="2748" y="1677" text-anchor="middle" font-size="25">Ontology</text>
+      <text x="2748" y="1719" text-anchor="middle" font-size="25">representation</text>
+    </g>
+    <rect x="2012" y="1840" width="306" height="127" rx="11" fill="#fff" stroke="#ef8420" stroke-width="3"/>
+    <text class="mathSmall" x="2028" y="1900">gᵢ = ∑</text>
+    <text class="mathSmall" x="2154" y="1936">j∈A(i)</text>
+    <text class="mathSmall" x="2220" y="1900">αᵢⱼeⱼ</text>
+    <rect x="2348" y="1840" width="507" height="127" rx="11" fill="#fff" stroke="#ef8420" stroke-width="3"/>
+    <text class="mathSmall" x="2382" y="1889">αᵢⱼ = softmax(f(eᵢ, eⱼ))</text>
+    <text class="mathSmall" x="2382" y="1939">f(eᵢ, eⱼ) = uₐᵀ tanh(Wₐ [eᵢ;eⱼ] + bₐ)</text>
+    <text x="2023" y="2019" fill="#d45713" font-size="29">• Convex combination of self + ancestor embeddings</text>
+    <text x="2023" y="2070" fill="#d45713" font-size="29">• Encodes hierarchical medical knowledge</text>
+  </g>
+
+  <!-- arrow from attention to prediction -->
+  <path d="M2906,1090 H2995" stroke="#6b4b9e" stroke-width="16" fill="none" marker-end="url(#arrowPurple)"/>
+
+  <!-- 4. Prediction Layer -->
+  <g id="prediction-layer">
+    <rect x="3007" y="140" width="777" height="1980" rx="16" fill="#ffffff" stroke="#6b4b9e" stroke-width="5"/>
+    <rect x="3018" y="150" width="755" height="91" fill="url(#purpleHeader)"/>
+    <text class="colTitle" x="3396" y="213" text-anchor="middle">4. Prediction Layer</text>
+
+    <!-- Visit representation construction -->
+    <rect x="3019" y="272" width="752" height="777" rx="14" class="panelFill" stroke="#6b4b9e" stroke-width="4"/>
+    <text class="subTitlePurple" x="3395" y="328" text-anchor="middle">Visit Representation Construction</text>
+
+    <rect x="3038" y="363" width="327" height="186" rx="13" fill="#f6ffff" stroke="#15958c" stroke-width="4"/>
+    <g fill="#1a9b92" stroke="#15958c" stroke-width="2">
+      <circle cx="3069" cy="436" r="11"/><path d="M3051,479 L3051,456 C3051,442 3087,442 3087,456 L3087,479 Z"/>
+      <circle cx="3100" cy="429" r="13"/><path d="M3077,489 L3077,461 C3077,444 3123,444 3123,461 L3123,489 Z"/>
+      <circle cx="3132" cy="437" r="11"/><path d="M3114,479 L3114,456 C3114,442 3150,442 3150,456 L3150,479 Z"/>
+    </g>
+    <text x="3246" y="414" text-anchor="middle" fill="#077f78" font-size="24" font-weight="700">Patient</text>
+    <text x="3246" y="456" text-anchor="middle" fill="#077f78" font-size="24" font-weight="700">representation</text>
+    <text class="math" x="3246" y="515" text-anchor="middle">h′ᵢ</text>
+
+    <rect x="3038" y="604" width="327" height="176" rx="13" fill="#fbfff7" stroke="#6ba34d" stroke-width="4"/>
+    <g fill="#69ad52" stroke="#4f8d3d" stroke-width="3">
+      <circle cx="3100" cy="655" r="14"/>
+      <circle cx="3060" cy="688" r="14"/>
+      <circle cx="3140" cy="688" r="14"/>
+      <circle cx="3037" cy="720" r="14"/>
+      <circle cx="3098" cy="730" r="14"/>
+      <circle cx="3158" cy="720" r="14"/>
+      <line x1="3100" y1="655" x2="3060" y2="688" stroke="#4f8d3d" stroke-width="4"/>
+      <line x1="3100" y1="655" x2="3140" y2="688" stroke="#4f8d3d" stroke-width="4"/>
+      <line x1="3060" y1="688" x2="3037" y2="720" stroke="#4f8d3d" stroke-width="4"/>
+      <line x1="3060" y1="688" x2="3098" y2="730" stroke="#4f8d3d" stroke-width="4"/>
+      <line x1="3140" y1="688" x2="3158" y2="720" stroke="#4f8d3d" stroke-width="4"/>
+    </g>
+    <text x="3246" y="653" text-anchor="middle" fill="#427d31" font-size="24" font-weight="700">Ontology</text>
+    <text x="3246" y="695" text-anchor="middle" fill="#427d31" font-size="24" font-weight="700">representation</text>
+    <text class="math" x="3246" y="754" text-anchor="middle">gᵢ</text>
+
+    <rect x="3038" y="829" width="327" height="193" rx="13" fill="#faf8ff" stroke="#6b4b9e" stroke-width="4"/>
+    <text x="3088" y="883" font-size="28" font-weight="700">Age, Sex</text>
+    <text x="3585" y="704" text-anchor="middle" fill="#4a2b7f" font-size="29" font-weight="800">Visit</text>
+    <text x="3585" y="746" text-anchor="middle" fill="#4a2b7f" font-size="29" font-weight="800">representation</text>
+    <text class="math" x="3585" y="813" text-anchor="middle">vₜ</text>
+    <rect x="3510" y="601" width="236" height="247" rx="24" fill="#fbf9ff" stroke="#6b4b9e" stroke-width="4"/>
+    <rect x="3544" y="770" width="118" height="46" rx="7" fill="#e9e3f5" stroke="#6b4b9e" stroke-width="4"/>
+    <g fill="#6b4b9e">
+      <circle cx="3563" cy="793" r="13"/><circle cx="3595" cy="793" r="13"/><circle cx="3628" cy="793" r="13"/><circle cx="3660" cy="793" r="13"/>
+    </g>
+    <path d="M3365,455 H3426 C3468,455 3458,635 3500,635" stroke="#6b4b9e" stroke-width="8" fill="none" marker-end="url(#arrowPurple)"/>
+    <path d="M3365,704 H3500" stroke="#6b4b9e" stroke-width="8" fill="none" marker-end="url(#arrowPurple)"/>
+    <path d="M3365,934 H3425 C3467,934 3460,790 3500,790" stroke="#6b4b9e" stroke-width="8" fill="none" marker-end="url(#arrowPurple)"/>
+    <path d="M3365,1050 V1115" stroke="#6b4b9e" stroke-width="8" fill="none" marker-end="url(#arrowPurple)"/>
+
+    <!-- Temporal Sequence Model -->
+    <rect x="3019" y="1130" width="752" height="544" rx="14" class="panelFill" stroke="#6b4b9e" stroke-width="4"/>
+    <text class="subTitlePurple" x="3395" y="1188" text-anchor="middle">Temporal Sequence Model</text>
+    <text class="mathSmall" x="3094" y="1252">v₁</text>
+    <text class="mathSmall" x="3294" y="1252">v₂</text>
+    <text class="mathSmall" x="3679" y="1252">vₜ</text>
+    <g>
+      <rect x="3039" y="1276" width="143" height="47" rx="7" fill="#ece6f6" stroke="#6b4b9e" stroke-width="4"/>
+      <rect x="3242" y="1276" width="143" height="47" rx="7" fill="#ece6f6" stroke="#6b4b9e" stroke-width="4"/>
+      <rect x="3608" y="1276" width="143" height="47" rx="7" fill="#ece6f6" stroke="#6b4b9e" stroke-width="4"/>
+      <g fill="#6b4b9e">
+        <circle cx="3063" cy="1299" r="12"/><circle cx="3095" cy="1299" r="12"/><circle cx="3127" cy="1299" r="12"/><circle cx="3159" cy="1299" r="12"/>
+        <circle cx="3266" cy="1299" r="12"/><circle cx="3298" cy="1299" r="12"/><circle cx="3330" cy="1299" r="12"/><circle cx="3362" cy="1299" r="12"/>
+        <circle cx="3632" cy="1299" r="12"/><circle cx="3664" cy="1299" r="12"/><circle cx="3696" cy="1299" r="12"/><circle cx="3728" cy="1299" r="12"/>
+      </g>
+      <path d="M3182,1300 H3230" stroke="#111" stroke-width="5" marker-end="url(#arrowBlack)"/>
+      <path d="M3385,1300 H3436" stroke="#111" stroke-width="5" marker-end="url(#arrowBlack)"/>
+      <text x="3504" y="1302" text-anchor="middle" font-size="42" font-weight="900">...</text>
+      <path d="M3560,1300 H3598" stroke="#111" stroke-width="5" marker-end="url(#arrowBlack)"/>
+      <path d="M3111,1323 V1362 Q3111,1380 3129,1380 H3232 Q3250,1380 3250,1398 V1420" stroke="#111" stroke-width="5" fill="none" marker-end="url(#arrowBlack)"/>
+      <path d="M3314,1323 V1418" stroke="#111" stroke-width="5" fill="none" marker-end="url(#arrowBlack)"/>
+      <path d="M3701,1323 V1362 Q3701,1380 3683,1380 H3400 Q3382,1380 3382,1398 V1420" stroke="#111" stroke-width="5" fill="none" marker-end="url(#arrowBlack)"/>
+    </g>
+    <rect x="3169" y="1436" width="477" height="207" rx="17" fill="#fbf9ff" stroke="#6b4b9e" stroke-width="4"/>
+    <text x="3406" y="1535" text-anchor="middle" fill="#4a2b7f" font-size="70" font-weight="900">LSTM</text>
+    <text x="3406" y="1602" text-anchor="middle" font-size="28">Recurrent prediction model</text>
+    <g stroke="#6b4b9e" stroke-width="4" fill="#e8e1f3">
+      <circle cx="3548" cy="1496" r="12"/><circle cx="3584" cy="1472" r="12"/><circle cx="3620" cy="1496" r="12"/>
+      <circle cx="3548" cy="1544" r="12"/><circle cx="3584" cy="1520" r="12"/><circle cx="3620" cy="1544" r="12"/>
+      <circle cx="3584" cy="1570" r="12"/>
+      <line x1="3548" y1="1496" x2="3584" y2="1472"/><line x1="3548" y1="1496" x2="3584" y2="1520"/>
+      <line x1="3584" y1="1472" x2="3620" y2="1496"/><line x1="3584" y1="1520" x2="3620" y2="1496"/>
+      <line x1="3548" y1="1544" x2="3584" y2="1520"/><line x1="3548" y1="1544" x2="3584" y2="1570"/>
+      <line x1="3584" y1="1570" x2="3620" y2="1544"/><line x1="3584" y1="1520" x2="3620" y2="1544"/>
+    </g>
+    <path d="M3646,1530 H3718 Q3738,1530 3738,1550 V1712" stroke="#111" stroke-width="5" fill="none" marker-end="url(#arrowBlack)"/>
+
+    <!-- Prediction Output -->
+    <rect x="3019" y="1717" width="752" height="404" rx="14" class="panelFill" stroke="#6b4b9e" stroke-width="4"/>
+    <text class="subTitlePurple" x="3395" y="1775" text-anchor="middle">Prediction Output</text>
+    <rect x="3040" y="1814" width="216" height="185" rx="18" fill="#fff" stroke="#6b4b9e" stroke-width="4"/>
+    <text class="math" x="3148" y="1875" text-anchor="middle">Yₜ₊₁</text>
+    <text x="3148" y="1931" text-anchor="middle" font-size="24" font-weight="600">Disease risk</text>
+    <text x="3148" y="1975" text-anchor="middle" font-size="24" font-weight="600">at next visit</text>
+    <rect x="3375" y="1814" width="327" height="185" rx="18" fill="#fff" stroke="#111" stroke-width="3"/>
+    <circle cx="3454" cy="1885" r="40" fill="#cde9bd" stroke="#82bb6c" stroke-width="4"/>
+    <circle cx="3627" cy="1885" r="40" fill="#f8a1a7" stroke="#df6b74" stroke-width="4"/>
+    <text x="3454" y="1900" text-anchor="middle" fill="#397e2c" font-size="40" font-weight="800">0</text>
+    <text x="3627" y="1900" text-anchor="middle" fill="#b0171e" font-size="40" font-weight="800">1</text>
+    <text x="3542" y="1884" text-anchor="middle" font-size="33" font-weight="800">--</text>
+    <text x="3454" y="1970" text-anchor="middle" font-size="24">No onset</text>
+    <text x="3627" y="1970" text-anchor="middle" font-size="24">Onset</text>
+    <path d="M3256,1907 L3375,1855" stroke="#111" stroke-width="4" stroke-dasharray="10 8" fill="none"/>
+    <path d="M3256,1907 L3375,1956" stroke="#111" stroke-width="4" stroke-dasharray="10 8" fill="none"/>
+    <text x="3395" y="2060" text-anchor="middle" font-size="27" font-weight="700">Predict disease onset at the next clinical visit</text>
+  </g>
+
+  <!-- Experimental setting -->
+  <g id="experimental-setting">
+    <rect x="1855" y="2157" width="1915" height="267" rx="18" fill="#fff" stroke="#6b4b9e" stroke-width="4" stroke-dasharray="10 8"/>
+    <text x="2038" y="2214" fill="#4a2b7f" font-size="30" font-weight="800">Experimental Setting</text>
+    <text x="2038" y="2264" font-size="24">• Binary classification task</text>
+    <text x="2038" y="2315" font-size="24">• Predict disease onset at the next visit</text>
+    <text x="2038" y="2365" font-size="24">• 118 disease-specific predictive models</text>
+    <text x="2552" y="2264" font-size="24">• 10 ICD categories</text>
+    <text x="2552" y="2315" font-size="24">• Exclude patients diagnosed within</text>
+    <text x="2580" y="2365" font-size="24">their first two clinical visits</text>
+    <text x="3061" y="2240" font-size="24" font-weight="700">Example diseases:</text>
+    <g fill="#fbf9ff" stroke="#6b4b9e" stroke-width="4">
+      <rect x="3061" y="2264" width="105" height="89" rx="12"/>
+      <rect x="3190" y="2264" width="105" height="89" rx="12"/>
+      <rect x="3319" y="2264" width="126" height="89" rx="12"/>
+      <rect x="3467" y="2264" width="105" height="89" rx="12"/>
+      <rect x="3591" y="2264" width="105" height="89" rx="12"/>
+    </g>
+    <text x="3114" y="2319" text-anchor="middle" fill="#4a2b7f" font-size="25" font-weight="800">CAD</text>
+    <text x="3243" y="2319" text-anchor="middle" fill="#4a2b7f" font-size="25" font-weight="800">CKD</text>
+    <text x="3382" y="2319" text-anchor="middle" fill="#4a2b7f" font-size="25" font-weight="800">MASH</text>
+    <text x="3520" y="2319" text-anchor="middle" fill="#4a2b7f" font-size="25" font-weight="800">PF</text>
+    <text x="3644" y="2319" text-anchor="middle" fill="#4a2b7f" font-size="25" font-weight="800">CD</text>
+    <text x="3715" y="2325" font-size="38" font-weight="900">...</text>
+  </g>
+
+  <!-- Legend -->
+  <g id="legend">
+    <rect x="46" y="2445" width="3748" height="105" rx="4" fill="#f9fafc" stroke="#6d7885" stroke-width="3"/>
+    <text x="69" y="2506" font-size="22">Legend:</text>
+    <line x1="235" y1="2486" x2="338" y2="2486" stroke="#087d77" stroke-width="5" stroke-dasharray="18 12"/>
+    <text x="369" y="2478" font-size="20">Family relationship</text>
+    <text x="369" y="2515" font-size="20">(first-degree)</text>
+    <line x1="655" y1="2495" x2="740" y2="2495" stroke="#111" stroke-width="4" marker-end="url(#arrowBlack)"/>
+    <text x="780" y="2480" font-size="20">Directed edge</text>
+    <text x="780" y="2517" font-size="20">(parent → child)</text>
+    <line x1="1088" y1="2495" x2="1214" y2="2495" stroke="#111" stroke-width="12" marker-end="url(#arrowHeavy)"/>
+    <text x="1236" y="2480" font-size="20">Attention-weighted</text>
+    <text x="1236" y="2517" font-size="20">message</text>
+    <rect x="1553" y="2475" width="96" height="34" rx="4" fill="#ece6f6" stroke="#6b4b9e" stroke-width="2"/>
+    <g fill="#6b4b9e"><circle cx="1570" cy="2492" r="7"/><circle cx="1594" cy="2492" r="7"/><circle cx="1618" cy="2492" r="7"/><circle cx="1642" cy="2492" r="7"/></g>
+    <text x="1674" y="2480" font-size="20">Vector / embedding</text>
+    <text x="1674" y="2517" font-size="20">representation</text>
+    <text x="1983" y="2504" font-size="24"><tspan font-family="Times New Roman" font-style="italic">C</tspan> : number of diagnosis codes</text>
+    <text x="2472" y="2504" font-size="24"><tspan font-family="Times New Roman" font-style="italic">Nᵢ</tspan> : set of first-degree relatives of patient <tspan font-family="Times New Roman" font-style="italic">i</tspan></text>
+    <text x="3049" y="2504" font-size="24"><tspan font-family="Times New Roman" font-style="italic">A(i)</tspan>: ancestor set of diagnosis code <tspan font-family="Times New Roman" font-style="italic">dᵢ</tspan></text>
+  </g>
+
+  <!-- Placeholders matching samed.png style -->
+  <g id="AF02">
+    <rect x="398" y="368" width="132" height="239" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="464" y="487.5" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="24" font-weight="700">&lt;AF&gt;02</text>
+  </g>
+  <g id="AF01">
+    <rect x="388" y="1161" width="74" height="162" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="425" y="1242" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="18" font-weight="700">&lt;AF&gt;01</text>
+  </g>
+  <g id="AF04">
+    <rect x="3042" y="901" width="96" height="120" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="3090" y="961" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="20" font-weight="700">&lt;AF&gt;04</text>
+  </g>
+  <g id="AF03">
+    <rect x="3202" y="906" width="52" height="100" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="3228" y="956" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="14" font-weight="700">&lt;AF&gt;03</text>
+  </g>
+  <g id="AF07">
+    <rect x="786" y="2014" width="104" height="108" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="838" y="2068" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="18" font-weight="700">&lt;AF&gt;07</text>
+  </g>
+  <g id="AF08">
+    <rect x="958" y="2040" width="64" height="103" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="990" y="2091.5" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="14" font-weight="700">&lt;AF&gt;08</text>
+  </g>
+  <g id="AF05">
+    <rect x="1051" y="2015" width="90" height="100" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="1096" y="2065" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="18" font-weight="700">&lt;AF&gt;05</text>
+  </g>
+  <g id="AF06">
+    <rect x="1887" y="2186" width="107" height="118" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="1940.5" y="2245" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="18" font-weight="700">&lt;AF&gt;06</text>
+  </g>
+</svg>

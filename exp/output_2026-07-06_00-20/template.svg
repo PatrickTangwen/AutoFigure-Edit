@@ -1,0 +1,363 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5632 3072" width="5632" height="3072">
+  <defs>
+    <style>
+      .title { font-family: sans-serif; font-size: 100px; font-weight: normal; }
+      .header-text { font-family: sans-serif; font-size: 90px; font-weight: bold; }
+      .section-bg { rx: 30; ry: 30; }
+      .text-bold { font-family: sans-serif; font-weight: bold; }
+      .text-normal { font-family: sans-serif; font-weight: normal; }
+      .arrow { stroke: black; stroke-width: 12; fill: none; }
+      .arrow-head { fill: black; }
+      .box { stroke: black; stroke-width: 6; fill: white; rx: 30; ry: 30; }
+      .graph-node { stroke: black; stroke-width: 6; }
+      .graph-edge { stroke: black; stroke-width: 8; fill: none; }
+      .formula { font-family: serif; font-size: 80px; font-style: italic; }
+      .placeholder-rect { fill: #808080; stroke: black; stroke-width: 2; }
+      .placeholder-text { font-family: monospace; font-size: 40px; fill: white; text-anchor: middle; dominant-baseline: middle; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" class="arrow-head" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#F8F9FA" />
+
+  <!-- Top Title -->
+  <text x="2816" y="150" text-anchor="middle" class="title">Figure: Overview of ALIGATEHR-Gen: Attention-Based GNN for Disease Prediction</text>
+
+  <!-- Bottom Title -->
+  <text x="2816" y="3000" text-anchor="middle" class="title" font-family="serif">Figure: Overview of ALIGATEHR-Gen: Attention-Based GNN for Disease Prediction</text>
+
+  <!-- Section Backgrounds -->
+  <!-- Data Processing -->
+  <rect x="50" y="250" width="1390" height="2600" fill="#E6F0FA" class="section-bg" />
+  <rect x="50" y="250" width="1390" height="150" fill="#CDE0F5" class="section-bg" />
+  <text x="745" y="350" text-anchor="middle" class="header-text">Data Processing</text>
+
+  <!-- Graph Construction -->
+  <rect x="1490" y="250" width="1330" height="2600" fill="#EAF3E6" class="section-bg" />
+  <rect x="1490" y="250" width="1330" height="150" fill="#D3E5CB" class="section-bg" />
+  <text x="2155" y="350" text-anchor="middle" class="header-text">Graph Construction</text>
+
+  <!-- Attention Layer -->
+  <rect x="2870" y="250" width="1330" height="2600" fill="#FEF0E6" class="section-bg" />
+  <rect x="2870" y="250" width="1330" height="150" fill="#FCE0CB" class="section-bg" />
+  <text x="3535" y="350" text-anchor="middle" class="header-text">Attention Layer</text>
+
+  <!-- Prediction Layer -->
+  <rect x="4250" y="250" width="1330" height="2600" fill="#FDF0E6" class="section-bg" />
+  <rect x="4250" y="250" width="1330" height="150" fill="#FBDAC1" class="section-bg" />
+  <text x="4915" y="350" text-anchor="middle" class="header-text">Prediction Layer</text>
+
+  <!-- ==================== Data Processing Section ==================== -->
+  <!-- Icons Placeholders -->
+  <g id="AF11">
+    <rect x="160" y="470" width="410" height="460" class="placeholder-rect" />
+    <text x="365" y="700" class="placeholder-text">&lt;AF&gt;11</text>
+  </g>
+  <g id="AF03">
+    <rect x="930" y="470" width="310" height="460" class="placeholder-rect" />
+    <text x="1085" y="700" class="placeholder-text">&lt;AF&gt;03</text>
+  </g>
+  <g id="AF12">
+    <rect x="160" y="1350" width="430" height="530" class="placeholder-rect" />
+    <text x="375" y="1615" class="placeholder-text">&lt;AF&gt;12</text>
+  </g>
+  <g id="AF13">
+    <rect x="880" y="1950" width="280" height="220" class="placeholder-rect" />
+    <text x="1020" y="2060" class="placeholder-text">&lt;AF&gt;13</text>
+  </g>
+  <g id="AF02">
+    <rect x="190" y="2050" width="410" height="450" class="placeholder-rect" />
+    <text x="395" y="2275" class="placeholder-text">&lt;AF&gt;02</text>
+  </g>
+
+  <!-- Text -->
+  <text x="365" y="1030" text-anchor="middle" font-size="65" class="text-bold">UKB EHR Data</text>
+  <text x="365" y="1110" text-anchor="middle" font-size="60" class="text-normal">(Primary Care &amp;</text>
+  <text x="365" y="1190" text-anchor="middle" font-size="60" class="text-normal">Inpatient)</text>
+
+  <text x="1085" y="1050" text-anchor="middle" font-size="65" class="text-bold">UKB Genetic Data</text>
+  <text x="1085" y="1130" text-anchor="middle" font-size="60" class="text-normal">(SNPs)</text>
+
+  <text x="770" y="1410" text-anchor="middle" font-size="60" class="text-normal">Relevant</text>
+  <text x="770" y="1490" text-anchor="middle" font-size="60" class="text-normal">Clinical</text>
+  <text x="770" y="1570" text-anchor="middle" font-size="60" class="text-normal">Features</text>
+  <text x="770" y="1650" text-anchor="middle" font-size="60" class="text-normal">(EHR)</text>
+
+  <text x="1200" y="1510" text-anchor="middle" font-size="65" class="text-bold">Processed</text>
+  <text x="1200" y="1590" text-anchor="middle" font-size="65" class="text-bold">Population</text>
+  <text x="1200" y="1670" text-anchor="middle" font-size="60" class="text-normal">(n=22,364)</text>
+
+  <text x="1080" y="2220" text-anchor="middle" font-size="65" class="text-bold">Genetically</text>
+  <text x="1080" y="2300" text-anchor="middle" font-size="65" class="text-bold">Inferred First-</text>
+  <text x="1080" y="2380" text-anchor="middle" font-size="65" class="text-bold">Degree</text>
+  <text x="1080" y="2460" text-anchor="middle" font-size="65" class="text-bold">Relatives</text>
+  <text x="1080" y="2540" text-anchor="middle" font-size="65" class="text-bold">(Kinship)</text>
+
+  <text x="395" y="2600" text-anchor="middle" font-size="65" class="text-bold">UKB Genetic Data</text>
+  <text x="395" y="2680" text-anchor="middle" font-size="60" class="text-normal">(SNPs)</text>
+
+  <!-- Arrows -->
+  <path d="M 450 1200 Q 550 1300 700 1350" class="arrow" marker-end="url(#arrowhead)" />
+  <path d="M 1000 1200 Q 900 1300 850 1350" class="arrow" marker-end="url(#arrowhead)" />
+  <path d="M 750 1700 Q 700 1850 550 2000" class="arrow" marker-end="url(#arrowhead)" />
+  <path d="M 850 1700 Q 900 1800 980 1900" class="arrow" marker-end="url(#arrowhead)" />
+
+  <!-- Bracket to Graph Construction -->
+  <path d="M 1420 1600 L 1450 1600 L 1450 1000 L 1520 1000" stroke="black" stroke-width="12" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 1450 1600 L 1450 2100 L 1520 2100" stroke="black" stroke-width="12" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- ==================== Graph Construction Section ==================== -->
+  <text x="2155" y="580" text-anchor="middle" font-size="75" class="text-bold">Patient Graph</text>
+
+  <!-- Patient Graph Placeholders & Edges -->
+  <path d="M 2000 750 L 2250 850" class="graph-edge" />
+  <path d="M 2000 750 L 1800 1050" class="graph-edge" />
+  <path d="M 2000 750 L 2100 1150" class="graph-edge" />
+  <path d="M 2250 850 L 2100 1150" class="graph-edge" />
+  <path d="M 1800 1050 L 2100 1150" class="graph-edge" />
+
+  <g id="AF07">
+    <rect x="1900" y="650" width="200" height="200" class="placeholder-rect" />
+    <text x="2000" y="750" class="placeholder-text">&lt;AF&gt;07</text>
+  </g>
+  <g id="AF09">
+    <rect x="2250" y="750" width="200" height="150" class="placeholder-rect" />
+    <text x="2350" y="825" class="placeholder-text">&lt;AF&gt;09</text>
+  </g>
+  <g id="AF10">
+    <rect x="1700" y="950" width="200" height="180" class="placeholder-rect" />
+    <text x="1800" y="1040" class="placeholder-text">&lt;AF&gt;10</text>
+  </g>
+  <g id="AF08">
+    <rect x="2000" y="1050" width="200" height="200" class="placeholder-rect" />
+    <text x="2100" y="1150" class="placeholder-text">&lt;AF&gt;08</text>
+  </g>
+
+  <!-- Kinship Box -->
+  <rect x="2310" y="1010" width="450" height="300" class="box" />
+  <text x="2535" y="1100" text-anchor="middle" font-size="65" class="text-normal">Kinship</text>
+  <text x="2535" y="1180" text-anchor="middle" font-size="65" class="text-normal">Coefficients</text>
+  <text x="2535" y="1260" text-anchor="middle" font-size="65" class="text-normal">estimation</text>
+  <path d="M 2310 1160 L 2200 1160" stroke="black" stroke-width="4" stroke-dasharray="10,10" fill="none" />
+
+  <text x="2155" y="1420" text-anchor="middle" font-size="60" class="text-normal">Edges link genetically inferred</text>
+  <text x="2155" y="1500" text-anchor="middle" font-size="60" class="text-normal">First-Degree Relatives</text>
+  <text x="2155" y="1580" text-anchor="middle" font-size="60" class="text-normal">(Kinship coeff. ≥ 0.177)</text>
+
+  <!-- Ontology Graph -->
+  <text x="2155" y="1750" text-anchor="middle" font-size="75" class="text-bold">Ontology Graph</text>
+  
+  <!-- Ontology Edges -->
+  <path d="M 2155 1900 L 1850 2100" class="graph-edge" />
+  <path d="M 2155 1900 L 2155 2100" class="graph-edge" />
+  <path d="M 2155 1900 L 2450 2100" class="graph-edge" />
+  
+  <path d="M 1850 2100 L 1650 2300" class="graph-edge" />
+  <path d="M 1850 2100 L 2000 2300" class="graph-edge" />
+  
+  <path d="M 2155 2100 L 2250 2300" class="graph-edge" />
+  
+  <path d="M 2450 2100 L 2450 2300" class="graph-edge" />
+  <path d="M 2450 2100 L 2650 2300" class="graph-edge" />
+  
+  <path d="M 1650 2300 L 1650 2500" class="graph-edge" />
+  <path d="M 1650 2300 L 1800 2500" class="graph-edge" />
+  <path d="M 2000 2300 L 2000 2500" class="graph-edge" />
+  <path d="M 2250 2300 L 2250 2500" class="graph-edge" />
+  <path d="M 2450 2300 L 2450 2500" class="graph-edge" />
+  <path d="M 2650 2300 L 2650 2500" class="graph-edge" />
+
+  <!-- Ontology Nodes -->
+  <circle cx="2155" cy="1900" r="40" fill="#7FB2E5" class="graph-node" />
+  
+  <circle cx="1850" cy="2100" r="40" fill="#7FB2E5" class="graph-node" />
+  <circle cx="2155" cy="2100" r="40" fill="#7FB2E5" class="graph-node" />
+  <circle cx="2450" cy="2100" r="40" fill="#7FB2E5" class="graph-node" />
+  <text x="2330" y="2100" font-size="80" font-weight="bold">...</text>
+  
+  <circle cx="1650" cy="2300" r="40" fill="#B3E2B5" class="graph-node" />
+  <circle cx="2000" cy="2300" r="40" fill="#B3E2B5" class="graph-node" />
+  <circle cx="2250" cy="2300" r="40" fill="#B3E2B5" class="graph-node" />
+  <circle cx="2450" cy="2300" r="40" fill="#B3E2B5" class="graph-node" />
+  <circle cx="2650" cy="2300" r="40" fill="#B3E2B5" class="graph-node" />
+  <text x="2100" y="2300" font-size="80" font-weight="bold">...</text>
+  
+  <circle cx="1650" cy="2500" r="40" fill="#F4B183" class="graph-node" />
+  <circle cx="1800" cy="2500" r="40" fill="#F4B183" class="graph-node" />
+  <circle cx="2000" cy="2500" r="40" fill="#F4B183" class="graph-node" />
+  <circle cx="2250" cy="2500" r="40" fill="#F4B183" class="graph-node" />
+  <circle cx="2450" cy="2500" r="40" fill="#F4B183" class="graph-node" />
+  <circle cx="2650" cy="2500" r="40" fill="#F4B183" class="graph-node" />
+  <text x="2100" y="2500" font-size="80" font-weight="bold">...</text>
+
+  <text x="2155" y="2650" text-anchor="middle" font-size="60" class="text-normal">Encodes Hierarchical Relationships</text>
+  <text x="2155" y="2730" text-anchor="middle" font-size="60" class="text-normal">among Medical Concepts (DAG)</text>
+
+  <!-- Arrows to Attention Layer -->
+  <path d="M 2770 1000 L 2930 1000" class="arrow" marker-end="url(#arrowhead)" />
+  <path d="M 2770 2100 L 2930 2100" class="arrow" marker-end="url(#arrowhead)" />
+
+  <!-- ==================== Attention Layer Section ==================== -->
+  
+  <!-- Top Attention Box -->
+  <rect x="2940" y="500" width="1190" height="950" class="box" />
+  <rect x="2940" y="500" width="1190" height="120" fill="#E6E6E6" class="section-bg" />
+  <text x="3535" y="585" text-anchor="middle" font-size="70" class="text-bold">Graph-Attention Network</text>
+
+  <!-- Top Formula -->
+  <text x="3040" y="770" font-size="75" font-family="serif" font-weight="bold" font-style="italic">h<tspan dy="-30" font-size="60">′</tspan><tspan dy="60" font-size="50">i</tspan></text>
+  <text x="3140" y="770" font-size="75" font-family="serif"> = ReLU(</text>
+  <text x="3450" y="790" font-size="120" font-family="serif">∑</text>
+  <text x="3580" y="770" font-size="75" font-family="serif" font-weight="bold" font-style="italic">α<tspan dy="-30" font-size="60">′</tspan><tspan dy="60" font-size="50">ij</tspan></text>
+  <text x="3710" y="770" font-size="75" font-family="serif" font-weight="bold">W<tspan dy="30" font-size="50">e</tspan></text>
+  <text x="3840" y="770" font-size="75" font-family="serif" font-weight="bold" font-style="italic">h<tspan dy="30" font-size="50">j</tspan></text>
+  <text x="3910" y="770" font-size="75" font-family="serif"> )</text>
+
+  <!-- Graph Attention Diagram -->
+  <g id="AF06">
+    <rect x="3250" y="850" width="200" height="200" class="placeholder-rect" />
+    <text x="3350" y="950" class="placeholder-text">&lt;AF&gt;06</text>
+  </g>
+  <circle cx="3680" cy="950" r="50" fill="#7FB2E5" class="graph-node" />
+  <circle cx="3630" cy="1100" r="50" fill="#7FB2E5" class="graph-node" />
+  
+  <path d="M 3600 950 L 3480 950" stroke="#708090" stroke-width="12" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 3570 1060 L 3450 1000" stroke="#708090" stroke-width="12" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 3600 850 L 3480 900" stroke="#708090" stroke-width="12" fill="none" marker-end="url(#arrowhead)" />
+
+  <text x="3700" y="1050" font-size="60" class="text-normal">Attention</text>
+  <circle cx="4060" cy="1030" r="20" fill="none" stroke="black" stroke-width="4" stroke-dasharray="5,5" />
+  <path d="M 4040 1030 L 4080 1030 M 4060 1010 L 4060 1050 M 4045 1015 L 4075 1045 M 4045 1045 L 4075 1015" stroke="black" stroke-width="4" />
+
+  <!-- Bottom Formula -->
+  <text x="3060" y="1320" font-size="75" font-family="serif" font-weight="bold" font-style="italic">α<tspan dy="-30" font-size="60">′</tspan><tspan dy="60" font-size="50">ij</tspan></text>
+  <text x="3180" y="1320" font-size="75" font-family="serif"> = ReLU(</text>
+  <text x="3490" y="1340" font-size="120" font-family="serif">∑</text>
+  <text x="3620" y="1320" font-size="75" font-family="serif" font-weight="bold" font-style="italic">α<tspan dy="30" font-size="50">ij</tspan></text>
+  <text x="3750" y="1320" font-size="75" font-family="serif" font-weight="bold">W<tspan dy="30" font-size="50">e</tspan></text>
+  <text x="3880" y="1320" font-size="75" font-family="serif" font-weight="bold" font-style="italic">h<tspan dy="30" font-size="50">j</tspan></text>
+  <text x="3950" y="1320" font-size="75" font-family="serif"> )</text>
+
+  <!-- Connecting Text -->
+  <text x="3535" y="1520" text-anchor="middle" font-size="60" class="text-normal">Infusing Relatives' Clinical Profiles</text>
+  <path d="M 3535 1560 L 3535 1630" class="arrow" marker-end="url(#arrowhead)" />
+  <path d="M 3535 1460 L 3535 1390" class="arrow" marker-end="url(#arrowhead)" />
+
+  <!-- Bottom Attention Box -->
+  <rect x="2940" y="1650" width="1190" height="780" class="box" />
+  <rect x="2940" y="1650" width="1190" height="120" fill="#E6E6E6" class="section-bg" />
+  <text x="3535" y="1735" text-anchor="middle" font-size="70" class="text-bold">Graph-Attention Network</text>
+
+  <!-- Bottom Box Formula -->
+  <text x="3300" y="1940" font-size="75" font-family="serif" font-weight="bold" font-style="italic">g<tspan dy="30" font-size="50">i</tspan></text>
+  <text x="3400" y="1940" font-size="75" font-family="serif"> = </text>
+  <text x="3490" y="1960" font-size="120" font-family="serif">∑</text>
+  <text x="3620" y="1940" font-size="75" font-family="serif" font-weight="bold" font-style="italic">α<tspan dy="30" font-size="50">ij</tspan></text>
+  <text x="3750" y="1940" font-size="75" font-family="serif" font-weight="bold" font-style="italic">e<tspan dy="30" font-size="50">j</tspan></text>
+
+  <!-- Bottom Box Diagram -->
+  <circle cx="3200" cy="2150" r="40" fill="#7FB2E5" class="graph-node" />
+  <path d="M 3230 2120 L 3320 2030" stroke="#4682B4" stroke-width="12" fill="none" marker-end="url(#arrowhead)" />
+  <text x="3200" y="2250" text-anchor="middle" font-size="55" class="text-normal">Medical code</text>
+  <text x="3200" y="2330" text-anchor="middle" font-size="55" class="text-normal">(e.g. code)</text>
+
+  <path d="M 3630 2080 L 3630 2000" stroke="#E67E22" stroke-width="12" stroke-dasharray="15,15" fill="none" marker-end="url(#arrowhead)" />
+  <text x="3750" y="2130" text-anchor="middle" font-size="55" class="text-normal">Compatibility function</text>
+  <text x="3750" y="2210" text-anchor="middle" font-size="55" class="text-normal">of ancestors' basic</text>
+  <text x="3750" y="2300" text-anchor="middle" font-size="55" class="text-normal">embeddings <tspan font-family="serif" font-style="italic">f</tspan>(<tspan font-family="serif" font-weight="bold" font-style="italic">ẽ<tspan dy="20" font-size="40">i</tspan></tspan><tspan dy="-20">, </tspan><tspan font-family="serif" font-weight="bold" font-style="italic">ẽ<tspan dy="20" font-size="40">j</tspan></tspan><tspan dy="-20">)</tspan></text>
+
+  <!-- Legend -->
+  <rect x="2940" y="2480" width="1190" height="230" class="box" rx="20" ry="20" />
+  <circle cx="3020" cy="2540" r="35" fill="#7FB2E5" class="graph-node" />
+  <text x="3080" y="2560" font-size="55" class="text-normal">Basic</text>
+  <text x="3080" y="2660" font-size="55" class="text-normal">Representation</text>
+  
+  <circle cx="3020" cy="2640" r="35" fill="#F4B183" class="graph-node" />
+  <circle cx="3550" cy="2540" r="35" fill="#B3E2B5" class="graph-node" />
+  <text x="3610" y="2560" font-size="55" class="text-normal">Final representation</text>
+  <circle cx="3550" cy="2640" r="35" fill="#F4B183" class="graph-node" />
+  <text x="3610" y="2660" font-size="55" class="text-normal">Final representation</text>
+
+  <!-- Arrows to Prediction Layer -->
+  <path d="M 4130 980 L 4220 980 L 4220 1550 L 4380 1550" stroke="black" stroke-width="12" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 4130 2040 L 4220 2040 L 4220 1550" stroke="black" stroke-width="12" fill="none" />
+
+  <!-- ==================== Prediction Layer Section ==================== -->
+  
+  <text x="4560" y="580" text-anchor="middle" font-size="65" class="text-bold">Demographic</text>
+  <text x="4560" y="660" text-anchor="middle" font-size="65" class="text-bold">Embeddings</text>
+  <text x="4560" y="740" text-anchor="middle" font-size="60" class="text-normal">(Age &amp; Sex)</text>
+  <path d="M 4560 780 L 4560 950" class="arrow" marker-end="url(#arrowhead)" />
+
+  <!-- Vertical Concat Box -->
+  <rect x="4440" y="990" width="220" height="1230" rx="20" ry="20" stroke="black" stroke-width="6" fill="#E6E6E6" />
+  <text x="4570" y="1600" text-anchor="middle" font-size="80" font-family="serif" font-weight="bold" transform="rotate(-90, 4570, 1600)">[ h<tspan dy="-30" font-size="60" font-style="italic">′</tspan><tspan dy="60" font-size="50" font-style="italic">i</tspan><tspan dy="-30"> || g</tspan><tspan dy="30" font-size="50" font-style="italic">i</tspan><tspan dy="-30"> || Demographics ]</tspan></text>
+
+  <path d="M 4560 2220 L 4560 2280" class="arrow" marker-end="url(#arrowhead)" />
+  <circle cx="4560" cy="2330" r="40" fill="none" stroke="black" stroke-width="6" />
+  <path d="M 4530 2330 L 4590 2330 M 4560 2300 L 4560 2360" stroke="black" stroke-width="6" />
+  <path d="M 4560 2380 L 4560 2440" class="arrow" marker-end="url(#arrowhead)" />
+
+  <text x="4560" y="2520" text-anchor="middle" font-size="65" class="text-bold">Demographic</text>
+  <text x="4560" y="2600" text-anchor="middle" font-size="65" class="text-bold">Embeddings</text>
+  <text x="4560" y="2680" text-anchor="middle" font-size="60" class="text-normal">(Age &amp; Sex)</text>
+
+  <!-- RNN Box -->
+  <path d="M 4660 1550 L 4780 1550" class="arrow" marker-end="url(#arrowhead)" />
+  <rect x="4790" y="1450" width="280" height="200" rx="30" ry="30" fill="#B3E2B5" stroke="black" stroke-width="6" />
+  <text x="4930" y="1530" text-anchor="middle" font-size="65" class="text-bold">RNN</text>
+  <text x="4930" y="1610" text-anchor="middle" font-size="65" class="text-normal">(LSTM)</text>
+  
+  <g id="AF04">
+    <rect x="4790" y="1150" width="280" height="250" class="placeholder-rect" />
+    <text x="4930" y="1275" class="placeholder-text">&lt;AF&gt;04</text>
+  </g>
+
+  <text x="4930" y="1740" text-anchor="middle" font-size="60" class="text-normal">Visit</text>
+  <text x="4930" y="1820" text-anchor="middle" font-size="60" class="text-normal">Represe.</text>
+  <text x="4930" y="1900" text-anchor="middle" font-size="60" class="text-normal">(v<tspan dy="20" font-size="40">t</tspan><tspan dy="-20">)</tspan></text>
+
+  <!-- Next Visit Output -->
+  <path d="M 5070 1550 L 5180 1550" class="arrow" marker-end="url(#arrowhead)" />
+  
+  <g id="AF05">
+    <rect x="5220" y="1410" width="130" height="110" class="placeholder-rect" />
+    <text x="5285" y="1465" class="placeholder-text">&lt;AF&gt;05</text>
+  </g>
+  <g id="AF01">
+    <rect x="5220" y="1570" width="130" height="110" class="placeholder-rect" />
+    <text x="5285" y="1625" class="placeholder-text">&lt;AF&gt;01</text>
+  </g>
+
+  <circle cx="5285" cy="1540" r="5" fill="black" />
+  <circle cx="5285" cy="1550" r="5" fill="black" />
+  <circle cx="5285" cy="1560" r="5" fill="black" />
+
+  <path d="M 5370 1460 Q 5420 1500 5450 1480" stroke="black" stroke-width="8" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 5370 1620 Q 5450 1620 5450 1520" stroke="black" stroke-width="8" fill="none" marker-end="url(#arrowhead)" />
+  <rect x="5460" y="1480" width="80" height="30" fill="#9B59B6" stroke="black" stroke-width="4" transform="rotate(-20, 5460, 1480)" />
+  <circle cx="5460" cy="1480" r="10" fill="white" stroke="black" stroke-width="4" transform="rotate(-20, 5460, 1480)" />
+
+  <text x="5320" y="1740" text-anchor="middle" font-size="65" class="text-bold">Next Visit</text>
+  <text x="5320" y="1820" text-anchor="middle" font-size="60" class="text-normal">Disease Risk</text>
+  <text x="5320" y="1900" text-anchor="middle" font-size="60" class="text-normal">Prediction (Y<tspan dy="20" font-size="40">t+1</tspan><tspan dy="-20">)</tspan></text>
+
+  <!-- Baselines Chart -->
+  <text x="5220" y="2100" text-anchor="middle" font-size="60" class="text-bold">118 Disease</text>
+  <text x="5220" y="2180" text-anchor="middle" font-size="60" class="text-bold">Prediction Models</text>
+  <text x="5220" y="2260" text-anchor="middle" font-size="60" class="text-normal">(AUC, F1, etc.)</text>
+
+  <text x="5020" y="2480" text-anchor="middle" font-size="65" class="text-normal">VS.</text>
+
+  <rect x="5100" y="2350" width="50" height="180" fill="#7FB2E5" />
+  <rect x="5170" y="2400" width="50" height="130" fill="#B3E2B5" />
+  <rect x="5240" y="2370" width="50" height="160" fill="#F4B183" />
+  <path d="M 5080 2530 L 5310 2530" stroke="black" stroke-width="6" />
+
+  <text x="5220" y="2650" text-anchor="middle" font-size="65" class="text-bold">Baselines</text>
+  <text x="5220" y="2730" text-anchor="middle" font-size="60" class="text-normal">(GRAM, Dipole, etc.)</text>
+
+</svg>

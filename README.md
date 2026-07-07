@@ -133,6 +133,10 @@ HF_TOKEN=你的_huggingface_read_token
 
 ## 6. 启动服务
 
+完整 Docker 启动流程参考：
+
+- [Docker 启动指南](docs/startup-guide.md)
+
 如果codex / claude code已经为你开启了服务器，则打开 Web 页面，复制粘贴以下URL
 http://localhost:8000
 
@@ -150,6 +154,18 @@ SAM Backend: roboflow
 
 下方API key 输入框可以留空，后端会读取 `.env`。
 
+## 7. 方法文本改写 Prompt 参考
+
+如果论文方法描述比较长、结构不清楚，建议先用下面这个提示词，让 Codex / ChatGPT / Claude 帮你把方法段落改写成更适合 AutoFigure-Edit 生成图的输入文本：
+
+- [manual_prompt.txt](manual_prompt.txt)
+
+使用方式：
+
+1. 打开 `manual_prompt.txt`。
+2. 把里面的 `[method txt]` 替换成你的论文方法文本。
+3. 让模型输出一份“可复制使用的文本”。
+4. 将输出结果粘贴到 AutoFigure-Edit 页面左侧输入框，再点击生成。
 
 ## 8. 查看输出目录和历史图片
 

@@ -1,0 +1,409 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5632 3072" width="5632" height="3072">
+  <defs>
+    <!-- Arrowhead definitions -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555" />
+    </marker>
+    <marker id="arrow-large" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7ba4d6" />
+    </marker>
+    <marker id="arrow-thick" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555" />
+    </marker>
+
+    <!-- Drop shadow for main panels -->
+    <filter id="drop-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="5" dy="5" stdDeviation="5" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+
+    <!-- Styles -->
+    <style>
+      .bg-gray { fill: #e6e7e8; }
+      .bg-light-gray { fill: #f1f2f2; }
+      .bg-white { fill: #ffffff; }
+      .bg-red-light { fill: #fce8e8; }
+      .bg-red { fill: #f8d7da; }
+      .bg-blue-light { fill: #d0e1f9; }
+      .bg-blue { fill: #a9cce3; }
+      .bg-blue-dark { fill: #7ba4d6; }
+      .bg-gray-box { fill: #d1d3d4; }
+      .bg-gray-box-light { fill: #e6e7e8; }
+      
+      .stroke-black { stroke: #000000; }
+      .stroke-gray { stroke: #555555; }
+      .stroke-red { stroke: #d9534f; }
+      .stroke-blue { stroke: #4a90e2; }
+      .stroke-blue-dark { stroke: #2c3e50; }
+      
+      .text-title { font-family: Arial, sans-serif; font-weight: bold; font-size: 80px; fill: #000; text-anchor: middle; }
+      .text-subtitle { font-family: Arial, sans-serif; font-weight: bold; font-size: 60px; fill: #000; text-anchor: middle; }
+      .text-body { font-family: Arial, sans-serif; font-size: 45px; fill: #000; text-anchor: middle; }
+      .text-body-left { font-family: Arial, sans-serif; font-size: 45px; fill: #000; text-anchor: start; }
+      .text-small { font-family: Arial, sans-serif; font-size: 35px; fill: #000; text-anchor: middle; }
+      .text-small-left { font-family: Arial, sans-serif; font-size: 35px; fill: #000; text-anchor: start; }
+      .text-bold { font-weight: bold; }
+      
+      .dashed-border { stroke-dasharray: 15, 15; }
+      .dashed-border-small { stroke-dasharray: 8, 8; }
+      
+      .thick-arrow { fill: #7f7f7f; stroke: #333; stroke-width: 4; }
+      .thick-arrow-blue { fill: #7ba4d6; stroke: #2c3e50; stroke-width: 4; }
+    </style>
+  </defs>
+
+  <!-- Background Panels -->
+  <!-- Data Source Panel -->
+  <rect x="50" y="50" width="850" height="2972" rx="30" class="bg-gray" />
+  <rect x="50" y="150" width="850" height="2872" rx="30" class="bg-light-gray" />
+  <text x="475" y="115" class="text-title">Data Source</text>
+
+  <!-- Processing Panel -->
+  <rect x="950" y="50" width="3150" height="2972" rx="30" class="bg-gray" />
+  <rect x="950" y="150" width="3150" height="2872" rx="30" class="bg-white" />
+  <text x="2525" y="115" class="text-title">Processing</text>
+
+  <!-- Outcome Panel -->
+  <rect x="4150" y="50" width="1432" height="2972" rx="30" class="bg-gray" />
+  <rect x="4150" y="150" width="1432" height="2872" rx="30" class="bg-light-gray" />
+  <text x="4866" y="115" class="text-title">Outcome</text>
+  <text x="4866" y="270" class="text-subtitle">Selected Data Categories</text>
+
+  <!-- ==================== DATA SOURCE SECTION ==================== -->
+
+  <!-- GWAS phenotypes Box -->
+  <rect x="100" y="550" width="750" height="850" rx="30" fill="#fff" stroke="#000" stroke-width="6" />
+  <g id="AF01">
+    <rect x="250" y="600" width="450" height="400" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="475" y="800" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;01</text>
+  </g>
+  <text x="475" y="1100" class="text-subtitle">GWAS</text>
+  <text x="475" y="1180" class="text-subtitle">phenotypes</text>
+  <text x="475" y="1270" class="text-body">7228 phenotypes</text>
+
+  <!-- Heart MRI Box -->
+  <rect x="100" y="1600" width="750" height="1300" rx="30" fill="#fff" stroke="#000" stroke-width="6" />
+  <text x="475" y="1720" class="text-subtitle">Heart MRI</text>
+  <g id="AF15">
+    <rect x="150" y="1780" width="650" height="500" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="475" y="2030" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;15</text>
+  </g>
+  <text x="475" y="2400" class="text-subtitle">Non-GWAS struc-</text>
+  <text x="475" y="2470" class="text-subtitle">tured imaging data</text>
+  <text x="130" y="2560" class="text-body-left">• Heart MRI: 27 fields</text>
+  <text x="130" y="2630" class="text-body-left">• Brain MRI:</text>
+  <text x="180" y="2700" class="text-body-left">884 fields</text>
+
+  <!-- Arrows from Data Source to Processing -->
+  <path d="M 850 975 L 970 975 L 970 950 L 1020 1000 L 970 1050 L 970 1025 L 850 1025 Z" class="thick-arrow" />
+  <path d="M 850 2150 L 970 2150 L 970 2125 L 1020 2175 L 970 2225 L 970 2200 L 850 2200 Z" class="thick-arrow" />
+  <path d="M 850 2500 L 970 2500 L 970 2475 L 1020 2525 L 970 2575 L 970 2550 L 850 2550 Z" class="thick-arrow" />
+
+  <!-- ==================== PROCESSING SECTION ==================== -->
+
+  <!-- Top Dashed Area (Remove fields) -->
+  <path d="M 1030 400 Q 1030 200 1230 200 L 1950 200 Q 2100 200 2100 350 L 2100 450 Q 2100 500 2050 500 L 2000 500 Q 1950 500 1950 550 L 1950 1800 Q 1950 1900 1850 1900 L 1130 1900 Q 1030 1900 1030 1800 Z" fill="none" stroke="#000" stroke-width="4" class="dashed-border" />
+  <text x="1565" y="300" class="text-body">Remove health-related and</text>
+  <text x="1565" y="360" class="text-body">temporally unsuitable fields</text>
+
+  <!-- Red Outline Box -->
+  <rect x="1070" y="470" width="850" height="1400" rx="30" class="bg-red-light" stroke="#d9534f" stroke-width="6" />
+
+  <!-- Illnesses / disease diagnoses -->
+  <rect x="1110" y="520" width="770" height="150" rx="20" class="bg-red" stroke="#d9534f" stroke-width="4" />
+  <g id="AF10">
+    <rect x="1130" y="540" width="130" height="110" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="1195" y="595" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="20" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;10</text>
+  </g>
+  <text x="1580" y="580" class="text-body text-bold">Illnesses / disease</text>
+  <text x="1580" y="640" class="text-body text-bold">diagnoses</text>
+  <text x="1780" y="640" class="text-body">2653</text>
+
+  <!-- Medication records -->
+  <rect x="1110" y="700" width="770" height="150" rx="20" class="bg-red" stroke="#d9534f" stroke-width="4" />
+  <g id="AF08">
+    <rect x="1130" y="720" width="130" height="110" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="1195" y="775" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="20" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;08</text>
+  </g>
+  <text x="1580" y="760" class="text-body text-bold">Medication</text>
+  <text x="1580" y="820" class="text-body text-bold">records</text>
+  <text x="1780" y="820" class="text-body">1049</text>
+
+  <!-- Operation / surgery records -->
+  <rect x="1110" y="880" width="770" height="150" rx="20" class="bg-red" stroke="#d9534f" stroke-width="4" />
+  <g id="AF05">
+    <rect x="1130" y="900" width="130" height="110" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="1195" y="955" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="20" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;05</text>
+  </g>
+  <text x="1580" y="940" class="text-body text-bold">Operation /</text>
+  <text x="1580" y="1000" class="text-body text-bold">surgery records</text>
+  <text x="1800" y="970" class="text-body">237</text>
+
+  <!-- Health-related outcomes -->
+  <rect x="1110" y="1060" width="770" height="150" rx="20" class="bg-red" stroke="#d9534f" stroke-width="4" />
+  <g id="AF03">
+    <rect x="1130" y="1080" width="130" height="110" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="1195" y="1135" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="20" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;03</text>
+  </g>
+  <text x="1540" y="1120" class="text-body text-bold">Health-related</text>
+  <text x="1540" y="1180" class="text-body text-bold">outcomes</text>
+  <text x="1800" y="1150" class="text-body">1538</text>
+
+  <!-- Online follow-up data -->
+  <rect x="1110" y="1240" width="770" height="200" rx="20" class="bg-red" stroke="#d9534f" stroke-width="4" />
+  <g id="AF07">
+    <rect x="1130" y="1260" width="130" height="110" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="1195" y="1315" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="20" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;07</text>
+  </g>
+  <text x="1540" y="1300" class="text-body text-bold">Online follow-up</text>
+  <text x="1540" y="1360" class="text-body text-bold">data</text>
+  <text x="1800" y="1330" class="text-body">740</text>
+  <text x="1540" y="1400" class="text-small">removed for</text>
+  <text x="1540" y="1440" class="text-small">temporal alignment</text>
+
+  <!-- Arrow to Remaining -->
+  <path d="M 1920 1150 L 1960 1150 L 1960 1135 L 2000 1160 L 1960 1185 L 1960 1170 L 1920 1170 Z" class="thick-arrow" />
+
+  <!-- Remaining after initial screening -->
+  <rect x="2020" y="950" width="480" height="420" rx="20" class="bg-blue-light" stroke="#2c3e50" stroke-width="4" />
+  <text x="2260" y="1050" class="text-body text-bold">Remaining</text>
+  <text x="2260" y="1110" class="text-body text-bold">after initial</text>
+  <text x="2260" y="1170" class="text-body text-bold">screening</text>
+  <text x="2260" y="1230" class="text-body">1011</text>
+  <text x="2260" y="1290" class="text-body">phenotypes</text>
+
+  <!-- Clock/Calendar Icon -->
+  <g id="AF13">
+    <rect x="2020" y="1550" width="350" height="220" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="2195" y="1660" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;13</text>
+  </g>
+  <!-- Arrow from clock to Remaining -->
+  <path d="M 2260 1550 L 2260 1410" stroke="#000" stroke-width="4" marker-end="url(#arrow)" />
+
+  <!-- Arrow from Remaining to next block -->
+  <path d="M 2500 1160 L 2540 1160 L 2540 1145 L 2580 1170 L 2540 1195 L 2540 1180 L 2500 1180 Z" class="thick-arrow" />
+
+  <!-- Second Top Dashed Area (Remove difficult-to-use) -->
+  <path d="M 2590 1800 Q 2590 1900 2690 1900 L 3390 1900 Q 3490 1900 3490 1800 L 3490 400 Q 3490 200 3290 200 L 2790 200 Q 2590 200 2590 400 Z" fill="none" stroke="#000" stroke-width="4" class="dashed-border" />
+  <text x="3040" y="300" class="text-body">Remove difficult-to-use</text>
+  <text x="3040" y="360" class="text-body">or irrelevant fields</text>
+
+  <!-- Gray Outline Box -->
+  <rect x="2630" y="470" width="820" height="1400" rx="30" class="bg-light-gray" stroke="#a7a9ac" stroke-width="6" />
+
+  <!-- Composite data -->
+  <rect x="2650" y="500" width="780" height="150" rx="20" class="bg-gray-box" stroke="#808285" stroke-width="4" />
+  <text x="3040" y="560" class="text-body text-bold">Composite data</text>
+  <text x="3040" y="620" class="text-small">Albumin / Globulin ratio</text>
+  <text x="3380" y="580" class="text-body">56</text>
+
+  <!-- ECG fields -->
+  <rect x="2650" y="680" width="780" height="150" rx="20" class="bg-gray-box" stroke="#808285" stroke-width="4" />
+  <text x="3040" y="740" class="text-body text-bold">ECG fields</text>
+  <text x="3040" y="800" class="text-small">low participation</text>
+  <text x="3380" y="760" class="text-body">22</text>
+
+  <!-- Family history -->
+  <rect x="2650" y="860" width="780" height="200" rx="20" class="bg-gray-box" stroke="#808285" stroke-width="4" />
+  <text x="3040" y="930" class="text-body text-bold">Family history</text>
+  <text x="3040" y="990" class="text-small">strongly disease-related</text>
+  <text x="3040" y="1030" class="text-small">but not selected as</text>
+  <text x="3040" y="1070" class="text-small">predictor</text>
+  <text x="3380" y="970" class="text-body">80</text>
+
+  <!-- Irrelevant or extraneous factors -->
+  <rect x="2650" y="1090" width="780" height="350" rx="20" class="bg-gray-box" stroke="#808285" stroke-width="4" />
+  <text x="3040" y="1160" class="text-body text-bold">Irrelevant or</text>
+  <text x="3040" y="1220" class="text-body text-bold">extraneous factors</text>
+  <text x="2700" y="1290" class="text-small-left">• birth month</text>
+  <text x="2700" y="1350" class="text-small-left">• birthplace</text>
+  <text x="2700" y="1410" class="text-small-left">• some test results</text>
+  <text x="3370" y="1300" class="text-body">310</text>
+
+  <!-- Arrow from Gray box to Selected GWAS -->
+  <path d="M 3450 1400 L 3500 1400 L 3500 1385 L 3540 1410 L 3500 1435 L 3500 1420 L 3450 1420 Z" class="thick-arrow" />
+
+  <!-- Index of Multiple Deprivation Bubble -->
+  <path d="M 3550 220 Q 3550 200 3580 200 L 4130 200 Q 4160 200 4160 220 L 4160 850 Q 4160 880 4130 880 L 3960 880 L 3850 1150 L 3900 880 L 3580 880 Q 3550 880 3550 850 Z" fill="#f1f2f2" stroke="#000" stroke-width="4" />
+  <text x="3855" y="270" class="text-body text-bold">Index of Multiple</text>
+  <text x="3855" y="330" class="text-body text-bold">Deprivation</text>
+  <text x="4030" y="330" class="text-body">fields</text>
+  <text x="3855" y="390" class="text-body">from England, Wales,</text>
+  <text x="3855" y="450" class="text-body">and Scotland are</text>
+  <text x="3855" y="510" class="text-body">combined into one field</text>
+  
+  <text x="3660" y="620" class="text-small">Segiom</text>
+  <text x="3660" y="670" class="text-small">regional</text>
+  <text x="3660" y="720" class="text-small">fields</text>
+  
+  <text x="4050" y="640" class="text-small">Regional</text>
+  <text x="4050" y="690" class="text-small">fields</text>
+  
+  <path d="M 3720 670 Q 3800 670 3820 720" fill="none" stroke="#000" stroke-width="6" marker-end="url(#arrow-large)" />
+  <path d="M 3970 670 Q 3880 670 3850 720" fill="none" stroke="#000" stroke-width="6" marker-end="url(#arrow-large)" />
+  <path d="M 3835 730 L 3835 830" stroke="#000" stroke-width="8" marker-end="url(#arrow-large)" />
+
+  <!-- Addition Box -->
+  <rect x="3650" y="950" width="280" height="90" rx="15" class="bg-gray-box" stroke="#000" stroke-width="4" />
+  <text x="3790" y="1010" class="text-body text-bold">Addition</text>
+  <text x="3960" y="1010" class="text-body">6</text>
+  
+  <path d="M 3490 995 L 3620 995" stroke="#000" stroke-width="4" class="dashed-border" marker-end="url(#arrow)" />
+  <path d="M 3790 1040 L 3790 1120" stroke="#000" stroke-width="4" marker-end="url(#arrow)" />
+
+  <!-- Selected GWAS phenotypes Box -->
+  <rect x="3550" y="1150" width="480" height="420" rx="20" class="bg-blue" stroke="#4a90e2" stroke-width="4" />
+  <text x="3790" y="1230" class="text-body text-bold">Selected</text>
+  <text x="3790" y="1290" class="text-body text-bold">GWAS</text>
+  <text x="3790" y="1350" class="text-body text-bold">phenotypes</text>
+  <text x="3790" y="1430" class="text-body">542</text>
+  <text x="3790" y="1490" class="text-body">phenotypes</text>
+
+  <!-- Mapped to text -->
+  <rect x="3550" y="1590" width="480" height="150" fill="#fff" />
+  <text x="3790" y="1650" class="text-body">Mapped to</text>
+  <text x="3790" y="1710" class="text-body">365 data fields</text>
+  
+  <!-- Dashed border around Selected GWAS -->
+  <rect x="3510" y="1110" width="560" height="700" rx="20" fill="none" stroke="#000" stroke-width="4" class="dashed-border" />
+
+  <!-- Big blue arrow to Outcome -->
+  <path d="M 4070 1520 L 4130 1520 L 4130 1480 L 4190 1540 L 4130 1600 L 4130 1560 L 4070 1560 Z" class="thick-arrow-blue" />
+
+  <!-- Bottom Dashed Area (PCA) -->
+  <rect x="1030" y="1950" width="3060" height="950" rx="40" fill="none" stroke="#000" stroke-width="6" class="dashed-border" />
+
+  <!-- PCA Input Boxes -->
+  <rect x="1070" y="2020" width="950" height="200" rx="20" class="bg-gray-box-light" stroke="#808285" stroke-width="4" />
+  <text x="1545" y="2090" class="text-body text-bold">Heart MRI</text>
+  <text x="1545" y="2150" class="text-body">structured data</text>
+  <text x="1545" y="2200" class="text-small">27 fields</text>
+
+  <rect x="1070" y="2320" width="950" height="200" rx="20" class="bg-gray-box-light" stroke="#808285" stroke-width="4" />
+  <text x="1545" y="2390" class="text-body text-bold">Brain MRI</text>
+  <text x="1545" y="2450" class="text-body">structured data</text>
+  <text x="1545" y="2500" class="text-small">884 fields</text>
+
+  <rect x="1070" y="2620" width="950" height="200" rx="20" class="bg-gray-box-light" stroke="#808285" stroke-width="4" />
+  <text x="1545" y="2690" class="text-body text-bold">Carotid artery ultrasound</text>
+  <text x="1545" y="2750" class="text-body">measurements</text>
+  <text x="1545" y="2800" class="text-small">12 meaningful measurement fields</text>
+
+  <!-- Arrows to PCA -->
+  <path d="M 2020 2120 L 2180 2120 L 2180 2100 L 2230 2140 L 2180 2180 L 2180 2160 L 2020 2160 Z" class="thick-arrow" />
+  <path d="M 2020 2420 L 2180 2420 L 2180 2400 L 2230 2440 L 2180 2480 L 2180 2460 L 2020 2460 Z" class="thick-arrow" />
+  <path d="M 2020 2720 L 2180 2720 L 2180 2700 L 2230 2740 L 2180 2780 L 2180 2760 L 2020 2760 Z" class="thick-arrow" />
+
+  <!-- PCA Main Box -->
+  <rect x="2270" y="2020" width="1680" height="800" rx="30" class="bg-white" stroke="#000" stroke-width="6" />
+  
+  <text x="2320" y="2150" font-family="Arial, sans-serif" font-size="70" fill="#000" text-anchor="start">PCA</text>
+  <path d="M 2330 2170 L 2350 2170 L 2360 2180 L 2370 2170 L 2390 2170" fill="none" stroke="#000" stroke-width="4" />
+  <path d="M 2330 2200 L 2350 2180 L 2360 2190 L 2370 2180 L 2390 2200" fill="none" stroke="#000" stroke-width="4" />
+  <text x="2400" y="2220" font-family="Arial, sans-serif" font-size="70" fill="#000" text-anchor="start">CA</text>
+  
+  <text x="3110" y="2130" class="text-subtitle">Principal Component Analysis</text>
+  <text x="3110" y="2200" class="text-body">After imputation</text>
+
+  <!-- PCA Internal Boxes -->
+  <rect x="2340" y="2300" width="1540" height="120" rx="20" class="bg-blue-light" stroke="#2c3e50" stroke-width="4" />
+  <text x="2400" y="2375" class="text-body-left">Heart MRI → retain top 11 principal components</text>
+
+  <rect x="2340" y="2480" width="1540" height="120" rx="20" class="bg-blue-light" stroke="#2c3e50" stroke-width="4" />
+  <text x="2400" y="2555" class="text-body-left">Brain MRI → retain top 89 principal components</text>
+
+  <rect x="2340" y="2660" width="1540" height="120" rx="20" class="bg-blue-light" stroke="#2c3e50" stroke-width="4" />
+  <text x="2400" y="2735" class="text-body-left">Ultrasound → retain top 5 principal components</text>
+
+  <!-- Vertical lines connecting PCA boxes -->
+  <path d="M 2310 2360 L 2310 2720" stroke="#2c3e50" stroke-width="4" />
+  <path d="M 2310 2360 L 2340 2360" stroke="#2c3e50" stroke-width="4" />
+  <path d="M 2310 2540 L 2340 2540" stroke="#2c3e50" stroke-width="4" />
+  <path d="M 2310 2720 L 2340 2720" stroke="#2c3e50" stroke-width="4" />
+
+  <!-- Big blue arrow from PCA to Outcome -->
+  <path d="M 3950 2420 L 4050 2420 L 4050 2380 L 4130 2460 L 4050 2540 L 4050 2500 L 3950 2500 Z" class="thick-arrow-blue" />
+
+
+  <!-- ==================== OUTCOME SECTION ==================== -->
+
+  <!-- Basic characteristics -->
+  <rect x="4240" y="340" width="550" height="550" rx="30" class="bg-blue-light" stroke="#2c3e50" stroke-width="4" />
+  <g id="AF17">
+    <rect x="4390" y="390" width="250" height="350" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="4515" y="565" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;17</text>
+  </g>
+  <text x="4515" y="800" class="text-body">Basic</text>
+  <text x="4515" y="860" class="text-body">characteristics</text>
+
+  <!-- Measurement -->
+  <rect x="4880" y="340" width="550" height="550" rx="30" class="bg-blue-light" stroke="#2c3e50" stroke-width="4" />
+  <g id="AF02">
+    <rect x="5000" y="390" width="310" height="250" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="5155" y="515" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;02</text>
+  </g>
+  <text x="5155" y="800" class="text-body">Measurement</text>
+
+  <!-- Lifestyle -->
+  <rect x="4240" y="950" width="550" height="550" rx="30" class="bg-blue-light" stroke="#2c3e50" stroke-width="4" />
+  <g id="AF18">
+    <rect x="4370" y="1000" width="290" height="320" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="4515" y="1160" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;18</text>
+  </g>
+  <text x="4515" y="1420" class="text-body">Lifestyle</text>
+
+  <!-- Natural and social environment -->
+  <rect x="4240" y="1560" width="550" height="600" rx="30" class="bg-blue-light" stroke="#2c3e50" stroke-width="4" />
+  <g id="AF11">
+    <rect x="4350" y="1610" width="330" height="300" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="4515" y="1760" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;11</text>
+  </g>
+  <text x="4515" y="1980" class="text-body">Natural and</text>
+  <text x="4515" y="2040" class="text-body">social</text>
+  <text x="4515" y="2100" class="text-body">environment</text>
+
+  <!-- Empirical priority assignment -->
+  <rect x="4880" y="950" width="550" height="900" rx="30" class="bg-gray-box-light" stroke="#000" stroke-width="4" />
+  <text x="5155" y="1050" class="text-body text-bold">Empirical priority</text>
+  <text x="5155" y="1110" class="text-body text-bold">assignment</text>
+  <g id="AF12">
+    <rect x="4920" y="1150" width="470" height="660" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="5155" y="1480" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;12</text>
+  </g>
+
+  <!-- Lines connecting to Empirical priority assignment -->
+  <path d="M 4790 890 L 4880 1000" stroke="#000" stroke-width="4" />
+  <path d="M 4790 1225 L 4880 1225" stroke="#000" stroke-width="4" />
+  <path d="M 4790 1700 L 4880 1500" stroke="#000" stroke-width="4" />
+
+  <!-- Imaging -->
+  <rect x="4240" y="2220" width="550" height="600" rx="30" class="bg-blue-light" stroke="#2c3e50" stroke-width="4" />
+  <g id="AF09">
+    <rect x="4290" y="2260" width="120" height="160" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="4350" y="2340" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="20" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;09</text>
+  </g>
+  <g id="AF04">
+    <rect x="4460" y="2260" width="120" height="160" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="4520" y="2340" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="20" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;04</text>
+  </g>
+  <g id="AF16">
+    <rect x="4270" y="2460" width="180" height="210" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="4360" y="2565" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="20" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;16</text>
+  </g>
+  <g id="AF14">
+    <rect x="4510" y="2480" width="220" height="160" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="4620" y="2560" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="20" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;14</text>
+  </g>
+  <text x="4515" y="2750" class="text-body">Imaging</text>
+
+  <!-- Genetics -->
+  <rect x="4880" y="2220" width="550" height="600" rx="30" class="bg-blue-light" stroke="#2c3e50" stroke-width="4" />
+  <g id="AF06">
+    <rect x="4980" y="2270" width="350" height="400" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="5155" y="2470" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial, sans-serif" font-weight="bold">&lt;AF&gt;06</text>
+  </g>
+  <text x="5155" y="2750" class="text-body">Genetics</text>
+
+</svg>

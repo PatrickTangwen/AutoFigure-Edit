@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5632 3072" width="5632" height="3072" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#ffffff" />
+
+  <!-- ================= ARROWS & PATHS ================= -->
+  
+  <!-- Load Raw Samples Arrow -->
+  <path d="M 1770 580 L 1770 750 L 960 750 L 960 850" fill="none" stroke="#5b677a" stroke-width="25"/>
+  <polygon points="960,880 930,830 990,830" fill="#5b677a"/>
+
+  <!-- Map Predictor Modalities Arrow -->
+  <path d="M 4000 650 L 4000 750 L 2830 750 L 2830 850" fill="none" stroke="#5b677a" stroke-width="25"/>
+  <polygon points="2830,880 2800,830 2860,830" fill="#5b677a"/>
+
+  <!-- Pass QC Level 1 Arrow -->
+  <path d="M 1700 1130 L 2100 1130" fill="none" stroke="#5b677a" stroke-width="25"/>
+  <polygon points="2130,1130 2080,1100 2080,1160" fill="#5b677a"/>
+
+  <!-- Unified EHR Alignment Arrow -->
+  <path d="M 3520 1130 L 4000 1130" fill="none" stroke="#5b677a" stroke-width="25"/>
+  <polygon points="4030,1130 3980,1100 3980,1160" fill="#5b677a"/>
+
+  <!-- Filter Pipeline Complete Arrow -->
+  <path d="M 4775 1380 L 4775 1600 L 2800 1600 L 2800 1760" fill="none" stroke="#38761d" stroke-width="25"/>
+  <polygon points="2800,1790 2770,1740 2830,1740" fill="#38761d"/>
+
+  <!-- Disease Annotation Mapping Arrow -->
+  <path d="M 3470 1995 L 4100 1995" fill="none" stroke="#38761d" stroke-width="25"/>
+  <polygon points="4130,1995 4080,1965 4080,2025" fill="#38761d"/>
+
+  <!-- Dashed Arrows for Data Splitting -->
+  <!-- Training Set 1 -->
+  <path d="M 2400 2190 L 2400 2260 L 700 2260 L 700 2420" stroke="#999999" stroke-width="12" stroke-dasharray="25, 15" fill="none"/>
+  <polygon points="700,2450 680,2410 720,2410" fill="#999999"/>
+  
+  <!-- Training Set 2 -->
+  <path d="M 2480 2190 L 2480 2330 L 1750 2330 L 1750 2420" stroke="#999999" stroke-width="12" stroke-dasharray="25, 15" fill="none"/>
+  <polygon points="1750,2450 1730,2410 1770,2410" fill="#999999"/>
+  
+  <!-- Validation Set -->
+  <path d="M 2820 2190 L 2820 2420" stroke="#999999" stroke-width="12" stroke-dasharray="25, 15" fill="none"/>
+  <polygon points="2820,2450 2800,2410 2840,2410" fill="#999999"/>
+  
+  <!-- Test Set -->
+  <path d="M 3240 2190 L 3240 2260 L 3880 2260 L 3880 2420" stroke="#999999" stroke-width="12" stroke-dasharray="25, 15" fill="none"/>
+  <polygon points="3880,2450 3860,2410 3900,2410" fill="#999999"/>
+
+
+  <!-- ================= SHAPES & BOXES ================= -->
+
+  <!-- UK Biobank Initial Cohort Cylinder -->
+  <path d="M 1150 200 L 1150 500 A 550 80 0 0 0 2250 500 L 2250 200 Z" fill="#b4c6e7" stroke="#44546a" stroke-width="10"/>
+  <ellipse cx="1700" cy="200" rx="550" ry="80" fill="#b4c6e7" stroke="#44546a" stroke-width="10"/>
+
+  <!-- Multimodal Predictor Modalities Box -->
+  <rect x="3660" y="100" width="1470" height="550" rx="30" fill="#d9d9d9" stroke="#7f7f7f" stroke-width="10"/>
+
+  <!-- Step 1 Hexagon -->
+  <polygon points="300,880 1580,880 1700,1130 1580,1380 300,1380 180,1130" fill="#f4cccc" stroke="#cc0000" stroke-width="10"/>
+
+  <!-- Step 2 Hexagon -->
+  <polygon points="2250,880 3400,880 3520,1130 3400,1380 2250,1380 2130,1130" fill="#f4cccc" stroke="#cc0000" stroke-width="10"/>
+
+  <!-- Step 3 Hexagon -->
+  <polygon points="4150,880 5400,880 5520,1130 5400,1380 4150,1380 4030,1130" fill="#d0e0e3" stroke="#45818e" stroke-width="10"/>
+
+  <!-- Final Analytical Cohort Box (Double Border) -->
+  <rect x="2200" y="1790" width="1270" height="400" rx="40" fill="#d9ead3" stroke="#38761d" stroke-width="15"/>
+  <rect x="2220" y="1810" width="1230" height="360" rx="30" fill="none" stroke="#38761d" stroke-width="5"/>
+
+  <!-- 1,560 Multi-label Phecodes Box -->
+  <rect x="4130" y="1830" width="1420" height="330" rx="30" fill="#d9ead3" stroke="#38761d" stroke-width="10"/>
+
+  <!-- Training Set 1 Box -->
+  <rect x="230" y="2450" width="930" height="420" rx="20" fill="#fce5cd" stroke="#e69138" stroke-width="10"/>
+
+  <!-- Training Set 2 Box -->
+  <rect x="1250" y="2450" width="970" height="420" rx="20" fill="#fce5cd" stroke="#e69138" stroke-width="10"/>
+
+  <!-- Validation Set Box -->
+  <rect x="2310" y="2450" width="1010" height="420" rx="20" fill="#fce5cd" stroke="#e69138" stroke-width="10"/>
+
+  <!-- Test Set Box -->
+  <rect x="3410" y="2450" width="950" height="420" rx="20" fill="#fce5cd" stroke="#e69138" stroke-width="10"/>
+
+
+  <!-- ================= TEXT ELEMENTS ================= -->
+
+  <!-- STAGE 1 Text -->
+  <text x="80" y="200" font-size="100" font-weight="bold" fill="black">STAGE 1:</text>
+  <text x="80" y="310" font-size="100" font-weight="bold" fill="black">INITIAL COHORT</text>
+  <text x="80" y="420" font-size="100" font-weight="bold" fill="black">&amp; MULTIMODAL</text>
+  <text x="80" y="530" font-size="100" font-weight="bold" fill="black">FEATURE</text>
+  <text x="80" y="640" font-size="100" font-weight="bold" fill="black">INTEGRATION</text>
+
+  <!-- STAGE 3 Text -->
+  <text x="30" y="1850" font-size="100" font-weight="bold" fill="black">STAGE 3:</text>
+  <text x="30" y="1960" font-size="100" font-weight="bold" fill="black">FINAL ANALYTICAL COHORT</text>
+  <text x="30" y="2070" font-size="100" font-weight="bold" fill="black">&amp; LABEL VERIFICATION</text>
+
+  <!-- STAGE 4 Text -->
+  <text x="230" y="2980" font-size="100" font-weight="bold" fill="black">STAGE 4: MODELING-READY DATA PARTITIONING MATRIX</text>
+
+  <!-- UK Biobank Text -->
+  <text x="970" y="180" font-size="70" font-weight="bold" fill="black">C1_1</text>
+  <text x="1700" y="330" font-size="90" font-weight="bold" text-anchor="middle" fill="black">UK Biobank Initial Cohort</text>
+  <text x="1700" y="440" font-size="80" text-anchor="middle" fill="black">(N ≈ 500,000 Participants)</text>
+
+  <!-- Modalities Box Text -->
+  <text x="5150" y="130" font-size="70" font-weight="bold" fill="black">C1_2</text>
+  <text x="3720" y="200" font-size="90" font-weight="bold" fill="black">Multimodal Predictor Modalities</text>
+  <circle cx="3740" cy="280" r="12" fill="black"/>
+  <text x="3780" y="300" font-size="80" fill="black">Demographics &amp; Lifestyle</text>
+  <circle cx="3740" cy="380" r="12" fill="black"/>
+  <text x="3780" y="400" font-size="80" fill="black">Physical Measurements</text>
+  <circle cx="3740" cy="480" r="12" fill="black"/>
+  <text x="3780" y="500" font-size="80" fill="black">Imaging Data (MRI/CT)</text>
+  <circle cx="3740" cy="580" r="12" fill="black"/>
+  <text x="3780" y="600" font-size="80" fill="black">Genetic Data (PRS Matrices)</text>
+
+  <!-- Step 1 Text -->
+  <text x="1600" y="900" font-size="70" font-weight="bold" fill="black">C2_1</text>
+  <text x="940" y="1030" font-size="90" font-weight="bold" text-anchor="middle" fill="black">Step 1: Missing Value Filtering</text>
+  <text x="940" y="1150" font-size="80" text-anchor="middle" fill="black">[Exclude samples with &gt;50%</text>
+  <text x="940" y="1250" font-size="80" text-anchor="middle" fill="black">critical attributes missing]</text>
+
+  <!-- Step 2 Text -->
+  <text x="3450" y="900" font-size="70" font-weight="bold" fill="black">C2_2</text>
+  <text x="2825" y="1000" font-size="90" font-weight="bold" text-anchor="middle" fill="black">Step 2: EHR Alignment &amp;</text>
+  <text x="2825" y="1100" font-size="90" font-weight="bold" text-anchor="middle" fill="black">Quality Check</text>
+  <text x="2825" y="1220" font-size="80" text-anchor="middle" fill="black">[Consolidate Inpatient,</text>
+  <text x="2825" y="1320" font-size="80" text-anchor="middle" fill="black">Self-report &amp; Primary Care]</text>
+
+  <!-- Step 3 Text -->
+  <text x="5440" y="900" font-size="70" font-weight="bold" fill="black">C2_3</text>
+  <text x="4775" y="1000" font-size="90" font-weight="bold" text-anchor="middle" fill="black">Step 3: Prevalence</text>
+  <text x="4775" y="1100" font-size="90" font-weight="bold" text-anchor="middle" fill="black">Thresholding</text>
+  <text x="4775" y="1220" font-size="80" text-anchor="middle" fill="black">[Drop Phecodes with</text>
+  <text x="4775" y="1320" font-size="80" text-anchor="middle" fill="black">&lt;100 positive cases]</text>
+
+  <!-- Final Analytical Cohort Text -->
+  <text x="2230" y="1730" font-size="70" font-weight="bold" fill="black">C3_1</text>
+  <text x="2835" y="1950" font-size="90" font-weight="bold" text-anchor="middle" fill="black">Final Analytical Cohort</text>
+  <text x="2835" y="2050" font-size="80" text-anchor="middle" fill="black">(N = 392,246 Patients)</text>
+
+  <!-- Phecodes Text -->
+  <text x="5370" y="1870" font-size="70" font-weight="bold" fill="black">C3_2</text>
+  <text x="4840" y="1960" font-size="90" font-weight="bold" text-anchor="middle" fill="black">1,560 Multi-label Phecodes</text>
+  <text x="4840" y="2060" font-size="80" text-anchor="middle" fill="black">[Aligned &amp; Validated Target Matrix]</text>
+
+  <!-- Training Set 1 Text -->
+  <text x="980" y="2500" font-size="70" font-weight="bold" fill="black">C4_1</text>
+  <text x="695" y="2630" font-size="90" font-weight="bold" text-anchor="middle" fill="black">Training Set (80%)</text>
+  <text x="695" y="2750" font-size="80" text-anchor="middle" fill="black">N ≈ 313,796</text>
+
+  <!-- Training Set 2 Text -->
+  <text x="1990" y="2500" font-size="70" font-weight="bold" fill="black">C4_2</text>
+  <text x="1735" y="2630" font-size="90" font-weight="bold" text-anchor="middle" fill="black">Training Set (80%)</text>
+  <text x="1735" y="2750" font-size="80" text-anchor="middle" fill="black">N ≈ 313,796</text>
+
+  <!-- Validation Set Text -->
+  <text x="3120" y="2500" font-size="70" font-weight="bold" fill="black">C4_2</text>
+  <text x="2815" y="2630" font-size="90" font-weight="bold" text-anchor="middle" fill="black">Validation Set (10%)</text>
+  <text x="2815" y="2750" font-size="80" text-anchor="middle" fill="black">N ≈ 39,225</text>
+
+  <!-- Test Set Text -->
+  <text x="4190" y="2500" font-size="70" font-weight="bold" fill="black">C4_3</text>
+  <text x="3885" y="2630" font-size="90" font-weight="bold" text-anchor="middle" fill="black">Test Set (10%)</text>
+  <text x="3885" y="2750" font-size="80" text-anchor="middle" fill="black">N ≈ 39,225</text>
+
+  <!-- Arrow Labels -->
+  <text x="1060" y="720" font-size="70" fill="black">Load Raw Samples</text>
+  
+  <text x="3140" y="630" font-size="70" fill="black">Map Predictor</text>
+  <text x="3210" y="710" font-size="70" fill="black">Modalities</text>
+  
+  <text x="1790" y="1000" font-size="70" fill="black">Pass QC</text>
+  <text x="1810" y="1080" font-size="70" fill="black">Level 1</text>
+  
+  <text x="3580" y="1000" font-size="70" fill="black">Unified EHR</text>
+  <text x="3610" y="1080" font-size="70" fill="black">Alignment</text>
+  
+  <text x="3950" y="1550" font-size="70" fill="black">Filter Pipeline Complete</text>
+  
+  <text x="3600" y="1870" font-size="70" fill="black">Disease</text>
+  <text x="3600" y="1950" font-size="70" fill="black">Annotation</text>
+  <text x="3600" y="2090" font-size="70" fill="black">Mapping</text>
+  
+  <text x="860" y="2220" font-size="70" fill="black">Random Matrix Split (80%)</text>
+  <text x="2850" y="2330" font-size="70" fill="black">Random Matrix Split (10%)</text>
+  <text x="3400" y="2220" font-size="70" fill="black">Random Matrix Split (10%)</text>
+
+
+  <!-- ================= PLACEHOLDERS ================= -->
+
+  <g id="AF09">
+    <rect x="2150" y="150" width="250" height="450" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="2275" y="375" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40">&lt;AF&gt;09</text>
+  </g>
+
+  <g id="AF11">
+    <rect x="110" y="1100" width="250" height="500" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="235" y="1350" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40">&lt;AF&gt;11</text>
+  </g>
+
+  <g id="AF04">
+    <rect x="3350" y="1050" width="250" height="380" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="3475" y="1240" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40">&lt;AF&gt;04</text>
+  </g>
+
+  <g id="AF02">
+    <rect x="5380" y="1080" width="200" height="450" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="5480" y="1305" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40">&lt;AF&gt;02</text>
+  </g>
+
+  <g id="AF07">
+    <rect x="1760" y="1750" width="440" height="450" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="1980" y="1975" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40">&lt;AF&gt;07</text>
+  </g>
+
+  <g id="AF12">
+    <rect x="4430" y="2380" width="470" height="660" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="4665" y="2710" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40">&lt;AF&gt;12</text>
+  </g>
+
+  <g id="AF03">
+    <rect x="4910" y="2370" width="190" height="670" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="5005" y="2705" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40">&lt;AF&gt;03</text>
+  </g>
+
+  <g id="AF10">
+    <rect x="5110" y="2400" width="200" height="640" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="5210" y="2720" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40">&lt;AF&gt;10</text>
+  </g>
+
+  <g id="AF06">
+    <rect x="5380" y="2410" width="200" height="630" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="5480" y="2725" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40">&lt;AF&gt;06</text>
+  </g>
+
+</svg>

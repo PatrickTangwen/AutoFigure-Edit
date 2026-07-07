@@ -1,0 +1,556 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5504 3072" width="5504" height="3072">
+  <defs>
+    <!-- Arrowheads -->
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3D8E53"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3E73AD"/>
+    </marker>
+    <marker id="arrow-red-dash" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#D82C20"/>
+    </marker>
+    <marker id="arrow-black" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/>
+    </marker>
+
+    <!-- Gradients -->
+    <linearGradient id="bg-grad-1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EBEBEB"/>
+      <stop offset="100%" stop-color="#EBEBEB"/>
+    </linearGradient>
+    <linearGradient id="bg-grad-2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E6F2EB"/>
+      <stop offset="100%" stop-color="#E6F2EB"/>
+    </linearGradient>
+    <linearGradient id="bg-grad-3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E6EDF5"/>
+      <stop offset="100%" stop-color="#E6EDF5"/>
+    </linearGradient>
+    <linearGradient id="bg-grad-4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EBEBEB"/>
+      <stop offset="100%" stop-color="#EBEBEB"/>
+    </linearGradient>
+
+    <!-- Funnel Gradients -->
+    <linearGradient id="funnel-green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D2E8D8"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="funnel-blue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D2E0F0"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+
+    <!-- Box Shadows/Filters -->
+    <filter id="drop-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="5" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="5504" height="3072" fill="#F8F8F8"/>
+
+  <!-- Title -->
+  <text x="2752" y="150" font-family="Arial, sans-serif" font-weight="bold" font-size="90" text-anchor="middle" fill="#000000">Data Filtering and Feature Organization Workflow</text>
+
+  <!-- Top Banner Chevrons -->
+  <!-- 1. Raw Data Sources -->
+  <path d="M 25 230 L 1050 230 L 1110 300 L 1050 370 L 25 370 Z" fill="url(#bg-grad-1)"/>
+  <text x="540" y="315" font-family="Arial, sans-serif" font-size="55" font-weight="bold" text-anchor="middle">1. Raw Data Sources</text>
+
+  <!-- 2. Initial Screening -->
+  <path d="M 1130 230 L 2100 230 L 2160 300 L 2100 370 L 1130 370 L 1190 300 Z" fill="url(#bg-grad-2)"/>
+  <text x="1645" y="315" font-family="Arial, sans-serif" font-size="55" font-weight="bold" text-anchor="middle">2. Initial Screening</text>
+
+  <!-- 3. Secondary Filtering and Feature Refinement -->
+  <path d="M 2180 230 L 3880 230 L 3940 300 L 3880 370 L 2180 370 L 2240 300 Z" fill="url(#bg-grad-3)"/>
+  <text x="3060" y="315" font-family="Arial, sans-serif" font-size="55" font-weight="bold" text-anchor="middle">3. Secondary Filtering and Feature Refinement</text>
+
+  <!-- 4. Final Feature Groups and Priority Levels -->
+  <path d="M 3960 230 L 5450 230 L 5450 370 L 3960 370 L 4020 300 Z" fill="url(#bg-grad-4)"/>
+  <text x="4705" y="315" font-family="Arial, sans-serif" font-size="55" font-weight="bold" text-anchor="middle">4. Final Feature Groups and Priority Levels</text>
+
+  <!-- ========================================== -->
+  <!-- COLUMN 1: Raw Data Sources                 -->
+  <!-- ========================================== -->
+
+  <!-- UK Biobank Raw Data Cylinder -->
+  <path d="M 55 1450 C 55 1420, 295 1420, 535 1450 L 535 1950 C 535 1980, 55 1980, 55 1950 Z" fill="#F0F0F0" stroke="#000000" stroke-width="8"/>
+  <ellipse cx="295" cy="1450" rx="240" ry="40" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+  <ellipse cx="295" cy="1950" rx="240" ry="40" fill="none" stroke="#000000" stroke-width="8"/>
+  <text x="295" y="1700" font-family="Arial, sans-serif" font-size="55" font-weight="bold" text-anchor="middle">UK Biobank</text>
+  <text x="295" y="1770" font-family="Arial, sans-serif" font-size="55" font-weight="bold" text-anchor="middle">Raw Data</text>
+
+  <!-- Connection from DB up to GWAS -->
+  <path d="M 265 1410 L 265 960 L 500 960" fill="none" stroke="#3D8E53" stroke-width="15" marker-end="url(#arrow-green)"/>
+  
+  <!-- Connection from DB down to non-GWAS -->
+  <path d="M 265 1990 L 265 2600 L 430 2600" fill="none" stroke="#3E73AD" stroke-width="15" marker-end="url(#arrow-blue)"/>
+
+  <!-- GWAS Data Box -->
+  <rect x="520" y="790" width="480" height="390" rx="20" fill="#D2E8D8" stroke="#000000" stroke-width="4" filter="url(#drop-shadow)"/>
+  <circle cx="520" cy="790" r="55" fill="#E6EDF5" stroke="#000000" stroke-width="4"/>
+  <text x="520" y="810" font-family="Arial, sans-serif" font-size="60" text-anchor="middle">A</text>
+  <circle cx="520" cy="1180" r="55" fill="#E6EDF5" stroke="#000000" stroke-width="4"/>
+  <text x="520" y="1200" font-family="Arial, sans-serif" font-size="60" text-anchor="middle">A</text>
+  
+  <text x="760" y="870" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">GWAS Data</text>
+  <text x="760" y="940" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">7,228 phenotypes</text>
+  
+  <g id="AF04">
+    <rect x="680" y="990" width="160" height="150" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="760" y="1065" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial">&lt;AF&gt;04</text>
+  </g>
+
+  <!-- non-GWAS Imaging Data Box -->
+  <rect x="450" y="2220" width="550" height="650" rx="20" fill="#E6EDF5" stroke="#000000" stroke-width="4" filter="url(#drop-shadow)"/>
+  <circle cx="450" cy="2220" r="55" fill="#E6EDF5" stroke="#000000" stroke-width="4"/>
+  <text x="450" y="2240" font-family="Arial, sans-serif" font-size="60" text-anchor="middle">B</text>
+  
+  <text x="725" y="2310" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">non-GWAS</text>
+  <text x="725" y="2380" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">Imaging Data</text>
+  <text x="725" y="2470" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">Heart MRI,</text>
+  <text x="725" y="2530" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">Brain MRI</text>
+  
+  <g id="AF09">
+    <rect x="480" y="2600" width="160" height="150" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="560" y="2675" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial">&lt;AF&gt;09</text>
+  </g>
+  <g id="AF01">
+    <rect x="640" y="2600" width="160" height="150" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="720" y="2675" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial">&lt;AF&gt;01</text>
+  </g>
+  <g id="AF15">
+    <rect x="800" y="2600" width="160" height="150" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="880" y="2675" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial">&lt;AF&gt;15</text>
+  </g>
+
+  <text x="725" y="2820" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">Heart MRI, Brain MRI,</text>
+  <text x="725" y="2870" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">Ultrasound</text>
+
+
+  <!-- ========================================== -->
+  <!-- COLUMN 2: Initial Screening                -->
+  <!-- ========================================== -->
+
+  <!-- Connection GWAS to Initial Screening Funnel -->
+  <path d="M 1000 960 L 1220 960" fill="none" stroke="#3D8E53" stroke-width="15" marker-end="url(#arrow-green)"/>
+
+  <!-- Initial Screening Funnel -->
+  <path d="M 1120 580 L 2020 580 L 1870 1500 L 1300 1500 Z" fill="url(#funnel-green)" stroke="#000000" stroke-width="4" filter="url(#drop-shadow)"/>
+  <ellipse cx="1570" cy="580" rx="450" ry="60" fill="#D2E8D8" stroke="#000000" stroke-width="4"/>
+  <text x="1570" y="500" font-family="Arial, sans-serif" font-size="55" font-weight="bold" text-anchor="middle">Initial GWAS Screening</text>
+
+  <!-- Funnel Content -->
+  <text x="1570" y="740" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">1. "Exclude health-</text>
+  <text x="1570" y="800" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">related outcomes"</text>
+  
+  <g id="AF17">
+    <rect x="1200" y="850" width="150" height="150" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="1275" y="925" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial">&lt;AF&gt;17</text>
+  </g>
+
+  <text x="1380" y="840" font-family="Arial, sans-serif" font-size="35" text-anchor="start">disease diagnoses,</text>
+  <text x="1380" y="890" font-family="Arial, sans-serif" font-size="35" text-anchor="start">medication records,</text>
+  <text x="1380" y="940" font-family="Arial, sans-serif" font-size="35" text-anchor="start">prescriptions, surgeries,</text>
+  <text x="1380" y="990" font-family="Arial, sans-serif" font-size="35" text-anchor="start">hospital registration</text>
+  <text x="1380" y="1040" font-family="Arial, sans-serif" font-size="35" text-anchor="start">summaries</text>
+
+  <text x="1570" y="1160" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">2. "Remove online</text>
+  <text x="1570" y="1220" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">follow-up data</text>
+  <text x="1570" y="1280" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">around 2016"</text>
+  <text x="1570" y="1350" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">Temporal alignment</text>
+
+  <!-- Arrow down from funnel -->
+  <path d="M 1570 1500 L 1570 1680" fill="none" stroke="#3D8E53" stroke-width="15" marker-end="url(#arrow-green)"/>
+
+  <!-- After initial screening Box -->
+  <rect x="1210" y="1700" width="730" height="200" rx="20" fill="#D2E8D8" stroke="#000000" stroke-width="4" filter="url(#drop-shadow)"/>
+  <text x="1575" y="1790" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">After initial screening</text>
+  <text x="1575" y="1860" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">1,011 phenotypes retained</text>
+
+  <!-- Connection non-GWAS to Retain meaningful -->
+  <path d="M 1000 2600 L 1170 2600" fill="none" stroke="#3E73AD" stroke-width="15" marker-end="url(#arrow-blue)"/>
+
+  <!-- Retain meaningful structured imaging measurements Box -->
+  <rect x="1190" y="2170" width="940" height="740" rx="20" fill="#E6EDF5" stroke="#000000" stroke-width="4" filter="url(#drop-shadow)"/>
+  <text x="1660" y="2260" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">Retain meaningful structured</text>
+  <text x="1660" y="2330" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">imaging measurements</text>
+
+  <!-- Heart MRI fields -->
+  <rect x="1310" y="2400" width="650" height="150" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <rect x="1310" y="2410" width="650" height="150" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <rect x="1310" y="2420" width="650" height="150" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <text x="1635" y="2510" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">Heart MRI: 27 fields</text>
+
+  <!-- Brain MRI fields -->
+  <rect x="1310" y="2640" width="650" height="150" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <rect x="1310" y="2650" width="650" height="150" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <rect x="1310" y="2660" width="650" height="150" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <text x="1635" y="2750" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">Brain MRI: 884 fields</text>
+
+  <g id="AF22">
+    <rect x="1260" y="2860" width="140" height="120" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="1330" y="2920" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial">&lt;AF&gt;22</text>
+  </g>
+  <text x="1440" y="2900" font-family="Arial, sans-serif" font-size="38" text-anchor="start">Structured pre-analyzed</text>
+  <text x="1440" y="2950" font-family="Arial, sans-serif" font-size="38" text-anchor="start">imaging measurements</text>
+
+  <!-- Arrow up from Retain meaningful -->
+  <path d="M 1575 2170 L 1575 1920" fill="none" stroke="#3D8E53" stroke-width="15" marker-end="url(#arrow-green)"/>
+
+
+  <!-- ========================================== -->
+  <!-- Excluded Variables Cylinder (between funnels) -->
+  <!-- ========================================== -->
+  <path d="M 2100 900 C 2100 885, 2180 885, 2260 900 L 2260 960 C 2260 975, 2100 975, 2100 960 Z" fill="#F4BCA9" stroke="#000000" stroke-width="4"/>
+  <ellipse cx="2180" cy="900" rx="80" ry="15" fill="#F4BCA9" stroke="#000000" stroke-width="4"/>
+  <text x="2180" y="1030" font-family="Arial, sans-serif" font-size="35" text-anchor="middle">Excluded</text>
+  <text x="2180" y="1070" font-family="Arial, sans-serif" font-size="35" text-anchor="middle">variables</text>
+
+  <!-- Dashed arrows from first funnel to excluded -->
+  <path d="M 1930 790 L 2080 910" fill="none" stroke="#D82C20" stroke-width="8" stroke-dasharray="20,10" marker-end="url(#arrow-red-dash)"/>
+  <path d="M 1830 1150 L 2080 940" fill="none" stroke="#D82C20" stroke-width="8" stroke-dasharray="20,10" marker-end="url(#arrow-red-dash)"/>
+
+  <!-- Arrow from excluded to second funnel -->
+  <path d="M 2270 940 L 2430 940" fill="none" stroke="#D82C20" stroke-width="10" marker-end="url(#arrow-red-dash)"/>
+
+
+  <!-- ========================================== -->
+  <!-- COLUMN 3: Secondary Filtering              -->
+  <!-- ========================================== -->
+
+  <!-- Secondary GWAS Filtering Funnel -->
+  <path d="M 2340 580 L 3220 580 L 3090 1500 L 2470 1500 Z" fill="url(#funnel-blue)" stroke="#000000" stroke-width="4" filter="url(#drop-shadow)"/>
+  <ellipse cx="2780" cy="580" rx="440" ry="60" fill="#D2E0F0" stroke="#000000" stroke-width="4"/>
+  <text x="2780" y="500" font-family="Arial, sans-serif" font-size="55" font-weight="bold" text-anchor="middle">Secondary GWAS Filtering</text>
+
+  <!-- Funnel Content -->
+  <g id="AF24">
+    <rect x="2460" y="690" width="130" height="130" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="2525" y="755" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial">&lt;AF&gt;24</text>
+  </g>
+  <text x="2630" y="740" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="start">Composite fields</text>
+  <text x="2630" y="790" font-family="Arial, sans-serif" font-size="38" text-anchor="start">Albumin / Globulin ratio</text>
+
+  <g id="AF13_chip">
+    <rect x="2480" y="860" width="130" height="130" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="2545" y="925" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial">&lt;AF&gt;13</text>
+  </g>
+  <text x="2630" y="910" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="start">ECG fields</text>
+  <text x="2630" y="960" font-family="Arial, sans-serif" font-size="38" text-anchor="start">low participation</text>
+
+  <g id="AF08_chip">
+    <rect x="2480" y="1050" width="130" height="130" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="2545" y="1115" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial">&lt;AF&gt;08</text>
+  </g>
+  <text x="2630" y="1080" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="start">Family history</text>
+  <text x="2630" y="1130" font-family="Arial, sans-serif" font-size="38" text-anchor="start">strongly disease-related</text>
+  <text x="2630" y="1180" font-family="Arial, sans-serif" font-size="38" text-anchor="start">but not relevant</text>
+
+  <g id="AF18_chip">
+    <rect x="2480" y="1250" width="130" height="130" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="2545" y="1315" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial">&lt;AF&gt;18</text>
+  </g>
+  <text x="2630" y="1310" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="start">Extraneous factors</text>
+  <text x="2630" y="1360" font-family="Arial, sans-serif" font-size="38" text-anchor="start">birth month, birthplace,</text>
+  <text x="2630" y="1410" font-family="Arial, sans-serif" font-size="38" text-anchor="start">selected test results</text>
+
+  <!-- Removed during refinement Cylinder -->
+  <path d="M 3260 900 C 3260 885, 3340 885, 3420 900 L 3420 960 C 3420 975, 3260 975, 3260 960 Z" fill="#F4BCA9" stroke="#000000" stroke-width="4"/>
+  <ellipse cx="3340" cy="900" rx="80" ry="15" fill="#F4BCA9" stroke="#000000" stroke-width="4"/>
+  <text x="3340" y="1030" font-family="Arial, sans-serif" font-size="35" text-anchor="middle">Removed</text>
+  <text x="3340" y="1070" font-family="Arial, sans-serif" font-size="35" text-anchor="middle">during</text>
+  <text x="3340" y="1110" font-family="Arial, sans-serif" font-size="35" text-anchor="middle">refinement</text>
+
+  <g id="AF12">
+    <rect x="3280" y="1150" width="120" height="120" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="3340" y="1210" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial">&lt;AF&gt;12</text>
+  </g>
+
+  <!-- Dashed arrows from second funnel to removed -->
+  <path d="M 3140 790 L 3250 910" fill="none" stroke="#D82C20" stroke-width="8" stroke-dasharray="20,10" marker-end="url(#arrow-red-dash)"/>
+  <path d="M 3100 1310 L 3250 950" fill="none" stroke="#D82C20" stroke-width="8" stroke-dasharray="20,10" marker-end="url(#arrow-red-dash)"/>
+
+  <!-- Arrow from second funnel to Filtered GWAS predictors -->
+  <path d="M 3440 940 L 3520 940" fill="none" stroke="#D82C20" stroke-width="10" stroke-dasharray="20,10" marker-end="url(#arrow-red-dash)"/>
+
+  <!-- Filtered GWAS predictors Box (Top) -->
+  <rect x="3540" y="750" width="500" height="390" rx="20" fill="#E6EDF5" stroke="#000000" stroke-width="4" filter="url(#drop-shadow)"/>
+  <text x="3790" y="840" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">Filtered GWAS</text>
+  <text x="3790" y="910" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">predictors</text>
+  <text x="3790" y="1000" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">542 phenotypes</text>
+  <text x="3790" y="1070" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">365 data fields</text>
+
+  <!-- Arrow down from second funnel -->
+  <path d="M 2780 1500 L 2780 1680" fill="none" stroke="#3D8E53" stroke-width="15" marker-end="url(#arrow-green)"/>
+
+  <!-- Filtered GWAS predictors Box (Bottom) -->
+  <rect x="2390" y="1700" width="680" height="320" rx="20" fill="#D2E8D8" stroke="#000000" stroke-width="4" filter="url(#drop-shadow)"/>
+  <text x="2730" y="1780" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">Filtered GWAS</text>
+  <text x="2730" y="1850" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">predictors</text>
+  <text x="2730" y="1930" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">542 phenotypes</text>
+  <text x="2730" y="2000" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">365 data fields</text>
+
+  <!-- Add auxiliary fields Box -->
+  <rect x="2330" y="2170" width="770" height="850" rx="20" fill="#E6EDF5" stroke="#000000" stroke-width="4" filter="url(#drop-shadow)"/>
+  <text x="2715" y="2260" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">Add auxiliary fields</text>
+  <text x="2715" y="2330" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">for imputation</text>
+
+  <rect x="2370" y="2400" width="650" height="200" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <text x="2695" y="2490" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">Number of live births</text>
+  <text x="2695" y="2560" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">Data-Field 2734</text>
+  <circle cx="3020" cy="2400" r="40" fill="#3E73AD" stroke="#FFFFFF" stroke-width="5"/>
+  <text x="3020" y="2425" font-family="Arial, sans-serif" font-size="70" font-weight="bold" fill="#FFFFFF" text-anchor="middle">+</text>
+  <g id="AF13">
+    <rect x="2980" y="2360" width="80" height="80" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="3020" y="2400" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="14" font-family="Arial">&lt;AF&gt;13</text>
+  </g>
+
+  <rect x="2370" y="2660" width="650" height="310" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <text x="2695" y="2740" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">Stillbirth, spontaneous</text>
+  <text x="2695" y="2810" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">miscarriage, or</text>
+  <text x="2695" y="2880" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">termination</text>
+  <text x="2695" y="2950" font-family="Arial, sans-serif" font-size="45" text-anchor="middle">Data-Field 2774</text>
+  <circle cx="3020" cy="2660" r="40" fill="#3E73AD" stroke="#FFFFFF" stroke-width="5"/>
+  <text x="3020" y="2685" font-family="Arial, sans-serif" font-size="70" font-weight="bold" fill="#FFFFFF" text-anchor="middle">+</text>
+  <g id="AF02">
+    <rect x="2980" y="2620" width="80" height="80" fill="#808080" stroke="black" stroke-width="2"/>
+    <text x="3020" y="2660" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="14" font-family="Arial">&lt;AF&gt;02</text>
+  </g>
+
+  <!-- Connection Retain meaningful to Add auxiliary -->
+  <path d="M 2130 2600 L 2300 2600" fill="none" stroke="#3E73AD" stroke-width="15" marker-end="url(#arrow-blue)"/>
+
+
+  <!-- ========================================== -->
+  <!-- COLUMN 4: Final Feature Groups             -->
+  <!-- ========================================== -->
+
+  <!-- Integrated Selected Variables Box -->
+  <rect x="3210" y="1700" width="450" height="580" rx="20" fill="#E6EDF5" stroke="#000000" stroke-width="4" filter="url(#drop-shadow)"/>
+  <text x="3435" y="1780" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">Integrated</text>
+  <text x="3435" y="1850" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">Selected</text>
+  <text x="3435" y="1920" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">Variables</text>
+  
+  <text x="3435" y="2020" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">Clean predictor</text>
+  <text x="3435" y="2080" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">variable set for</text>
+  <text x="3435" y="2140" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">downstream UKB-</text>
+  <text x="3435" y="2200" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">MDRMF tasks</text>
+
+  <!-- Arrow Filtered GWAS to Integrated -->
+  <path d="M 3070 1860 L 3180 1860" fill="none" stroke="#3D8E53" stroke-width="15" marker-end="url(#arrow-green)"/>
+
+  <!-- Arrow Add auxiliary to Integrated -->
+  <path d="M 3100 2600 L 3435 2600 L 3435 2310" fill="none" stroke="#3E73AD" stroke-width="15" marker-end="url(#arrow-blue)"/>
+
+  <!-- Big Arrow from Integrated to Feature Groups -->
+  <path d="M 3435 1700 L 3435 1420 L 4840 1420 L 4840 1370" fill="none" stroke="#3E73AD" stroke-width="15" marker-end="url(#arrow-blue)"/>
+
+  <!-- Feature Groups Categories Box -->
+  <rect x="3720" y="1460" width="1000" height="1580" rx="30" fill="#F0F0F0" stroke="#000000" stroke-width="4"/>
+
+  <!-- Basic Characteristics -->
+  <rect x="3750" y="1490" width="430" height="610" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  
+  <g id="AF06">
+    <rect x="3800" y="1520" width="140" height="140" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="3870" y="1590" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial">&lt;AF&gt;06</text>
+  </g>
+  <g id="AF21">
+    <rect x="3960" y="1520" width="140" height="140" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="4030" y="1590" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="30" font-family="Arial">&lt;AF&gt;21</text>
+  </g>
+
+  <text x="3965" y="1720" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">Basic</text>
+  <text x="3965" y="1780" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">Characteristics</text>
+  <text x="3965" y="1850" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">height, weight,</text>
+  <text x="3965" y="1900" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">waist-to-hip ratio,</text>
+  <text x="3965" y="1950" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">age, gender,</text>
+  <text x="3965" y="2000" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">ethnicity, occupation,</text>
+  <text x="3965" y="2050" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">education,</text>
+  <text x="3965" y="2100" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">appearance</text>
+
+  <!-- Lifestyle -->
+  <rect x="3750" y="2130" width="430" height="520" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <text x="3965" y="2210" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">Lifestyle</text>
+  
+  <g id="AF20">
+    <rect x="3770" y="2240" width="80" height="100" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="3810" y="2290" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="20" font-family="Arial">&lt;AF&gt;20</text>
+  </g>
+  <g id="AF11">
+    <rect x="3870" y="2240" width="80" height="100" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="3910" y="2290" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="20" font-family="Arial">&lt;AF&gt;11</text>
+  </g>
+  <g id="AF08_life">
+    <rect x="4080" y="2240" width="80" height="100" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="4120" y="2290" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="20" font-family="Arial">&lt;AF&gt;08</text>
+  </g>
+
+  <text x="3965" y="2380" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">smoking, drinking,</text>
+  <text x="3965" y="2430" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">mental health,</text>
+  <text x="3965" y="2480" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">exercise, electronic</text>
+  <text x="3965" y="2530" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">device use,</text>
+  <text x="3965" y="2580" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">sleep, diet,</text>
+  <text x="3965" y="2630" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">early life factors</text>
+
+  <!-- Imaging -->
+  <rect x="3750" y="2680" width="430" height="330" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <text x="3965" y="2780" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">Imaging</text>
+  <text x="3965" y="2860" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">MRI and</text>
+  <text x="3965" y="2910" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">ultrasound</text>
+  <text x="3965" y="2960" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">data</text>
+
+  <!-- Measures -->
+  <rect x="4210" y="1490" width="480" height="610" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <text x="4450" y="1570" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">Measures</text>
+  
+  <g id="AF16">
+    <rect x="4240" y="1600" width="90" height="110" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="4285" y="1655" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="20" font-family="Arial">&lt;AF&gt;16</text>
+  </g>
+  <g id="AF10">
+    <rect x="4350" y="1600" width="60" height="110" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="4380" y="1655" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="16" font-family="Arial">&lt;AF&gt;10</text>
+  </g>
+  <g id="AF23">
+    <rect x="4430" y="1600" width="60" height="110" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="4460" y="1655" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="16" font-family="Arial">&lt;AF&gt;23</text>
+  </g>
+  <g id="AF19">
+    <rect x="4510" y="1600" width="150" height="110" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="4585" y="1655" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="25" font-family="Arial">&lt;AF&gt;19</text>
+  </g>
+
+  <text x="4450" y="1800" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">blood, urine,</text>
+  <text x="4450" y="1850" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">biochemical indicators,</text>
+  <text x="4450" y="1900" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">auditory and visual</text>
+  <text x="4450" y="1950" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">assessments, bodily</text>
+  <text x="4450" y="2000" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">pain perception,</text>
+  <text x="4450" y="2050" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">physical measurements</text>
+
+  <!-- Natural and Social Environment -->
+  <rect x="4210" y="2130" width="480" height="520" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  
+  <g id="AF05">
+    <rect x="4240" y="2160" width="110" height="110" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="4295" y="2215" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="25" font-family="Arial">&lt;AF&gt;05</text>
+  </g>
+
+  <text x="4520" y="2210" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">Natural</text>
+  <text x="4520" y="2270" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">and Social</text>
+  <text x="4520" y="2330" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">Environment</text>
+
+  <text x="4450" y="2400" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">working environment,</text>
+  <text x="4450" y="2450" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">living environment, early</text>
+  <text x="4450" y="2500" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">life environment, air</text>
+  <text x="4450" y="2550" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">pollution, noise</text>
+  <text x="4450" y="2600" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">pollution, poverty index</text>
+
+  <!-- Genetics -->
+  <rect x="4210" y="2680" width="480" height="330" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  
+  <g id="AF14">
+    <rect x="4240" y="2710" width="100" height="100" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="4290" y="2760" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="25" font-family="Arial">&lt;AF&gt;14</text>
+  </g>
+
+  <text x="4450" y="2780" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">Genetics</text>
+  <text x="4450" y="2860" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">genetic principal</text>
+  <text x="4450" y="2910" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">components and PRS</text>
+  <text x="4450" y="2960" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">information</text>
+
+
+  <!-- Additional field harmonization Box -->
+  <rect x="4100" y="420" width="1320" height="920" rx="20" fill="#E6EDF5" stroke="#000000" stroke-width="4" filter="url(#drop-shadow)"/>
+  <text x="4760" y="500" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">Additional field harmonization</text>
+
+  <!-- Connection Filtered GWAS to Additional field -->
+  <path d="M 4040 940 L 4130 940" fill="none" stroke="#3E73AD" stroke-width="15" marker-end="url(#arrow-blue)"/>
+
+  <!-- 1. Carotid artery ultrasound -->
+  <rect x="4130" y="550" width="510" height="300" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <text x="4385" y="620" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">1. "Carotid artery</text>
+  <text x="4385" y="680" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">ultrasound"</text>
+  <text x="4385" y="760" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">12 meaningful</text>
+  <text x="4385" y="810" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">measurement fields</text>
+
+  <!-- 2. Index of Multiple Deprivation -->
+  <rect x="4130" y="880" width="510" height="420" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <text x="4385" y="950" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">2. Index of Multiple</text>
+  <text x="4385" y="1010" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">Deprivation"</text>
+  <g id="AF07">
+    <rect x="4235" y="1100" width="300" height="150" fill="#808080" stroke="black" stroke-width="4"/>
+    <text x="4385" y="1175" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="40" font-family="Arial">&lt;AF&gt;07</text>
+  </g>
+
+  <!-- Arrow from 2. Index of Multiple Deprivation -->
+  <path d="M 4640 1090 L 4840 1090 L 4840 1370" fill="none" stroke="#3D8E53" stroke-width="15" marker-end="url(#arrow-green)"/>
+
+  <!-- Index of Multiple Deprivation Right Side -->
+  <text x="5020" y="620" font-family="Arial, sans-serif" font-size="45" font-weight="bold" text-anchor="middle">2. Index of Multiple Deprivation</text>
+
+  <rect x="4680" y="680" width="350" height="150" rx="20" fill="#E6EDF5" stroke="#000000" stroke-width="4"/>
+  <text x="4855" y="750" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">England:</text>
+  <text x="4855" y="800" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">Field 26410</text>
+
+  <rect x="4680" y="880" width="350" height="150" rx="20" fill="#E6EDF5" stroke="#000000" stroke-width="4"/>
+  <text x="4855" y="950" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">Wales:</text>
+  <text x="4855" y="1000" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">Field 26426</text>
+
+  <rect x="4680" y="1080" width="350" height="150" rx="20" fill="#E6EDF5" stroke="#000000" stroke-width="4"/>
+  <text x="4855" y="1150" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">Scotland:</text>
+  <text x="4855" y="1200" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">Field 26427</text>
+
+  <!-- Arrows to Combined Chip -->
+  <path d="M 5030 755 L 5150 940" fill="none" stroke="#3E73AD" stroke-width="10" marker-end="url(#arrow-blue)"/>
+  <path d="M 5030 955 L 5130 955" fill="none" stroke="#3E73AD" stroke-width="10" marker-end="url(#arrow-blue)"/>
+  <path d="M 5030 1155 L 5150 970" fill="none" stroke="#3E73AD" stroke-width="10" marker-end="url(#arrow-blue)"/>
+
+  <!-- Combined Index of Multiple Deprivation Chip -->
+  <rect x="5200" y="860" width="130" height="130" fill="#808080" stroke="black" stroke-width="4"/>
+  <text x="5265" y="1040" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">Combined</text>
+  <text x="5265" y="1090" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">Index of</text>
+  <text x="5265" y="1140" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">Multiple</text>
+  <text x="5265" y="1190" font-family="Arial, sans-serif" font-size="38" text-anchor="middle">Deprivation</text>
+
+
+  <!-- ========================================== -->
+  <!-- Priority Pyramid                           -->
+  <!-- ========================================== -->
+
+  <!-- Arrow from Features to Pyramid -->
+  <path d="M 4720 2200 L 4850 2200" fill="none" stroke="#3D8E53" stroke-width="15" marker-end="url(#arrow-green)"/>
+
+  <text x="5150" y="1760" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">Empirical Priority</text>
+  <text x="5150" y="1830" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle">Assignment</text>
+
+  <!-- Pyramid Levels -->
+  <path d="M 5070 1900 L 5230 1900 L 5200 2000 L 5100 2000 Z" fill="#D2E8D8" stroke="#000000" stroke-width="4"/>
+  <text x="5150" y="1945" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">Essential</text>
+  <text x="5150" y="1985" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">information</text>
+
+  <path d="M 5020 2020 L 5280 2020 L 5230 2150 L 5070 2150 Z" fill="#D2E8D8" stroke="#000000" stroke-width="4"/>
+  <text x="5150" y="2080" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">Essential</text>
+  <text x="5150" y="2130" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">information</text>
+
+  <path d="M 4960 2170 L 5340 2170 L 5280 2340 L 5020 2340 Z" fill="#A5C4D8" stroke="#000000" stroke-width="4"/>
+  <text x="5150" y="2250" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">Detailed</text>
+  <text x="5150" y="2300" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">information</text>
+
+  <path d="M 4880 2360 L 5420 2360 L 5340 2550 L 4960 2550 Z" fill="#A5B8D8" stroke="#000000" stroke-width="4"/>
+  <text x="5150" y="2450" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">Minor</text>
+  <text x="5150" y="2500" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">information</text>
+
+  <!-- Final Prioritized Data Fields Box -->
+  <rect x="4830" y="2590" width="630" height="420" rx="20" fill="#E6EDF5" stroke="#000000" stroke-width="4" filter="url(#drop-shadow)"/>
+  <text x="5145" y="2670" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle">Final Prioritized</text>
+  <text x="5145" y="2740" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle">Data Fields</text>
+  <text x="5145" y="2820" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">Selected variables</text>
+  <text x="5145" y="2880" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">organized by content</text>
+  <text x="5145" y="2940" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">category and downstream-</text>
+  <text x="5145" y="3000" font-family="Arial, sans-serif" font-size="42" text-anchor="middle">task importance</text>
+
+</svg>
