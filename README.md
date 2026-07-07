@@ -196,12 +196,45 @@ optimized_template.svg
 final.svg
 ```
 
-如果任务失败，优先查看：
+如果任务失败，优先查看, 将Log复制给codex / claude code诊断
 
 ```text
 outputs\<任务目录>\run.log
 ```
 
-## 9. 如果有任何报错
+## 9. 故障排除
 
-问codex / claude code
+### 9.1 补填 API key 后仍然报 missing key
+
+如果页面或日志提示缺少某个 API key，先检查 `.env` 是否已经补上对应变量，例如：
+
+```env
+GEMINI_API_KEY=...
+OPENAI_API_KEY=...
+ROBOFLOW_API_KEY=...
+HF_TOKEN=...
+```
+
+补完 `.env` 后，需要让 Docker 重新创建容器，才能重新读取新的环境变量。不要只用 `docker compose restart`。
+
+推荐命令：
+
+```bash
+docker compose up -d --force-recreate
+```
+
+如果你同时改了 `Dockerfile` 或依赖，再使用：
+
+```bash
+docker compose up -d --build --force-recreate
+```
+
+### 9.2 macOS 看不见 `.env` 文件
+
+macOS Finder 默认会隐藏以 `.` 开头的文件。如果在项目目录里看不见 `.env`，按：
+
+```text
+Command + Shift + .
+```
+
+即可显示或隐藏这类文件。
