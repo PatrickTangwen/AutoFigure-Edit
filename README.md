@@ -156,7 +156,7 @@ SAM Backend: roboflow
 
 ## 7. 方法文本改写 Prompt 参考
 
-如果论文方法描述比较长、结构不清楚，建议先用下面这个提示词，让 Codex / ChatGPT / Claude 帮你把方法段落改写成更适合 AutoFigure-Edit 生成图的输入文本：
+将论文method部分先用下面这个提示词优化，让 Codex / ChatGPT / Claude 把method段落改写成更适合 AutoFigure-Edit 生成图的输入文本：
 
 - [manual_prompt.txt](manual_prompt.txt)
 
@@ -165,7 +165,7 @@ SAM Backend: roboflow
 1. 打开 `manual_prompt.txt`。
 2. 把里面的 `[method txt]` 替换成你的论文方法文本。
 3. 让模型输出一份“可复制使用的文本”。
-4. 将输出结果粘贴到 AutoFigure-Edit 页面左侧输入框，再点击生成。
+4. 将输出结果粘贴到 AutoFigure-Edit 页面左侧输入框，再点击生成。记得确认SVG / 推理 Provider选的是Gemini
 
 ## 8. 查看输出目录和历史图片
 
